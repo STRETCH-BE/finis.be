@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finis - Acoustic Solutions Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .solutions-hero {
+            padding: 10rem 2rem 6rem;
+            background: linear-gradient(135deg, var(--teal) 0%, #008574 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .solutions-hero h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .solutions-hero p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .solutions-section {
+            padding: 6rem 2rem;
+        }
+        
+        .solutions-section:nth-child(even) {
+            background: var(--warm-white);
+        }
+        
+        .solution-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .solution-info h2 {
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+        }
+        
+        .solution-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .solution-features li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--light-grey);
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+        
+        .solution-features li::before {
+            content: "✓";
+            color: var(--teal);
+            font-weight: bold;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .solution-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .spec-item {
+            background: var(--warm-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .solutions-section:nth-child(even) .spec-item {
+            background: white;
+        }
+        
+        .spec-item strong {
+            color: var(--teal);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .solution-visual {
+            height: 400px;
+            background: var(--gradient-teal);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .comparison-table {
+            max-width: 1400px;
+            margin: 4rem auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th {
+            background: var(--teal);
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--light-grey);
+        }
+        
+        .comparison-table tr:hover {
+            background: var(--warm-white);
+        }
+        
+        .rating {
+            display: flex;
+            gap: 0.25rem;
+        }
+        
+        .rating-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--light-grey);
+        }
+        
+        .rating-dot.filled {
+            background: var(--teal);
+        }
+        
+        @media (max-width: 968px) {
+            .solution-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .solution-specs {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">FINIS</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="realizations.html">Realizations</a></li>
+                <li><a href="index.html#approach">Our Approach</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="solutions-hero">
+        <h1>Acoustic Solutions</h1>
+        <p>Precision-engineered systems that transform spaces through sound control and architectural design</p>
+    </section>
+
+    <!-- Stretch Ceilings -->
+    <section class="solutions-section">
+        <div class="solution-content">
+            <div class="solution-info">
+                <h2>Stretch Ceilings</h2>
+                <p>Our premium textile stretch ceiling solution combines maximum acoustic performance with unlimited design flexibility. Perfect for spaces where aesthetics and acoustics are equally important.</p>
+                
+                <ul class="solution-features">
+                    <li>Superior acoustic absorption (NRC up to 0.95)</li>
+                    <li>Seamless installation up to 100m² without joints</li>
+                    <li>Unlimited color and print options</li>
+                    <li>Integrated lighting possibilities</li>
+                </ul>
+                
+                <div class="solution-specs">
+                    <div class="spec-item">
+                        <strong>Acoustic Performance</strong>
+                        <span>NRC 0.75 - 0.95</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Installation Speed</strong>
+                        <span>50-70m² per day</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Maintenance</strong>
+                        <span>Washable, dust-free</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Applications</strong>
+                        <span>Offices, Hotels, Retail</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-visual" style="background: var(--gradient-teal);">
+                🎨
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Ceilings -->
+    <section class="solutions-section">
+        <div class="solution-content">
+            <div class="solution-visual" style="background: var(--gradient-copper);">
+                ⊞
+            </div>
+            <div class="solution-info">
+                <h2>Grid Ceilings</h2>
+                <p>Modular ceiling systems offering easy access to plenum space while maintaining excellent acoustic properties. Ideal for technical environments requiring regular maintenance access.</p>
+                
+                <ul class="solution-features">
+                    <li>Full accessibility to technical installations</li>
+                    <li>Wide range of acoustic tile options</li>
+                    <li>Easy replacement and maintenance</li>
+                    <li>Cost-effective solution</li>
+                </ul>
+                
+                <div class="solution-specs">
+                    <div class="spec-item">
+                        <strong>Acoustic Performance</strong>
+                        <span>NRC 0.50 - 0.85</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Grid Sizes</strong>
+                        <span>600x600mm, 625x625mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Maintenance</strong>
+                        <span>Easy panel access</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Applications</strong>
+                        <span>Offices, Schools, Hospitals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metal Ceilings -->
+    <section class="solutions-section">
+        <div class="solution-content">
+            <div class="solution-info">
+                <h2>Metal Ceilings</h2>
+                <p>Durable and elegant metal ceiling solutions combining acoustic performance with modern aesthetics. Perfect for high-traffic areas and contemporary designs.</p>
+                
+                <ul class="solution-features">
+                    <li>High durability and longevity</li>
+                    <li>Modern, industrial aesthetic</li>
+                    <li>Perforated for acoustic control</li>
+                    <li>Fire-resistant properties</li>
+                </ul>
+                
+                <div class="solution-specs">
+                    <div class="spec-item">
+                        <strong>Acoustic Performance</strong>
+                        <span>NRC 0.40 - 0.70</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Materials</strong>
+                        <span>Aluminum, Steel</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Finish Options</strong>
+                        <span>Powder coated, Anodized</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Applications</strong>
+                        <span>Airports, Malls, Lobbies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-visual" style="background: linear-gradient(135deg, #6B7280 0%, #9CA3AF 100%);">
+                ◻
+            </div>
+        </div>
+    </section>
+
+    <!-- Felt Ceilings -->
+    <section class="solutions-section">
+        <div class="solution-content">
+            <div class="solution-visual" style="background: linear-gradient(135deg, #059669 0%, #10B981 100%);">
+                ⬡
+            </div>
+            <div class="solution-info">
+                <h2>Felt Ceilings</h2>
+                <p>Sustainable acoustic solutions made from recycled materials. Ideal for eco-conscious projects seeking warmth and excellent sound absorption.</p>
+                
+                <ul class="solution-features">
+                    <li>Made from recycled PET bottles</li>
+                    <li>Excellent acoustic properties</li>
+                    <li>Warm, tactile aesthetic</li>
+                    <li>100% recyclable</li>
+                </ul>
+                
+                <div class="solution-specs">
+                    <div class="spec-item">
+                        <strong>Acoustic Performance</strong>
+                        <span>NRC 0.80 - 1.00</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Sustainability</strong>
+                        <span>60% recycled content</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Thickness</strong>
+                        <span>12mm - 25mm</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Applications</strong>
+                        <span>Offices, Education, Creative</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acoustic Panels -->
+    <section class="solutions-section">
+        <div class="solution-content">
+            <div class="solution-info">
+                <h2>Acoustic Panels</h2>
+                <p>Wall-mounted or ceiling-hung acoustic panels for targeted sound treatment. Perfect for addressing specific acoustic challenges in any space.</p>
+                
+                <ul class="solution-features">
+                    <li>Strategic sound absorption</li>
+                    <li>Customizable shapes and colors</li>
+                    <li>Easy installation</li>
+                    <li>Decorative impact</li>
+                </ul>
+                
+                <div class="solution-specs">
+                    <div class="spec-item">
+                        <strong>Acoustic Performance</strong>
+                        <span>NRC 0.70 - 0.90</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Sizes</strong>
+                        <span>Custom dimensions</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Core Materials</strong>
+                        <span>Mineral wool, Polyester</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Applications</strong>
+                        <span>Meeting rooms, Studios</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-visual" style="background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);">
+                ▭
+            </div>
+        </div>
+    </section>
+
+    <!-- Climate Ceilings -->
+    <section class="solutions-section">
+        <div class="solution-content">
+            <div class="solution-visual" style="background: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);">
+                ❄
+            </div>
+            <div class="solution-info">
+                <h2>Climate Ceilings</h2>
+                <p>Integrated ceiling systems combining acoustic treatment with heating and cooling capabilities for maximum comfort and efficiency.</p>
+                
+                <ul class="solution-features">
+                    <li>Radiant heating/cooling integrated</li>
+                    <li>Energy-efficient climate control</li>
+                    <li>Silent operation</li>
+                    <li>Acoustic optimization</li>
+                </ul>
+                
+                <div class="solution-specs">
+                    <div class="spec-item">
+                        <strong>Acoustic Performance</strong>
+                        <span>NRC 0.60 - 0.80</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Cooling Capacity</strong>
+                        <span>50-80 W/m²</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Energy Savings</strong>
+                        <span>Up to 30%</span>
+                    </div>
+                    <div class="spec-item">
+                        <strong>Applications</strong>
+                        <span>Premium Offices, Hotels</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section-container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Solution Comparison</h2>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Solution</th>
+                        <th>Acoustic Performance</th>
+                        <th>Design Flexibility</th>
+                        <th>Installation Speed</th>
+                        <th>Maintenance</th>
+                        <th>Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Stretch Ceilings</strong></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td>Premium spaces, custom design</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grid Ceilings</strong></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td>Technical spaces, easy access needed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Metal Ceilings</strong></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td>High-traffic areas, modern aesthetic</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Felt Ceilings</strong></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td>Sustainable projects, warm aesthetic</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acoustic Panels</strong></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td>Targeted treatment, decorative</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Climate Ceilings</strong></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span><span class="rating-dot"></span></div></td>
+                        <td><div class="rating"><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot filled"></span><span class="rating-dot"></span><span class="rating-dot"></span></div></td>
+                        <td>Integrated climate control</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact" style="padding: 6rem 2rem;">
+        <div class="section-container" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2 style="color: white;">Ready to Transform Your Space?</h2>
+            <p style="color: #D1D5DB; margin-bottom: 2rem;">Let's discuss which acoustic solution is right for your project.</p>
+            <a href="index.html#contact" class="btn-primary">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">FINIS</div>
+                <p>Acoustic Architecture, Precisely Crafted</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="realizations.html">Realizations</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Part of Stretch Group</h4>
+                <p>Backed by manufacturing excellence from <a href="https://stretchplafond.be" target="_blank">STRETCH</a> and <a href="https://altodesign.pl" target="_blank">Alto Design</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Finis. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
