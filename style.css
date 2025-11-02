@@ -177,11 +177,6 @@ nav.scrolled {
     background-attachment: fixed; /* Parallax effect */
 }
 
-/* Fallback gradient if no image */
-.hero:not([style*="background-image"]) {
-    background: linear-gradient(135deg, var(--warm-white) 0%, #FFFFFF 100%);
-}
-
 /* Semi-transparent overlay for text readability */
 .hero::before {
     content: '';
