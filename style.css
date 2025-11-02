@@ -170,7 +170,7 @@ nav.scrolled {
     overflow: hidden;
     
     /* Background Image - Replace with your image */
-    background-image: url('/images/hero-background.jpg');
+    background-image: url('images/hero-background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
