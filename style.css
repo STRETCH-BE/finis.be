@@ -503,6 +503,35 @@ nav.scrolled {
     background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
+/* Support for img tags in project thumbnails */
+.project-thumbnail {
+    position: relative;
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-tags {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    display: inline-block;
+}
+
 .project-overlay {
     width: 100%;
     position: relative;
