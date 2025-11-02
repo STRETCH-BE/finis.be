@@ -506,13 +506,22 @@ nav.scrolled {
 /* Support for img tags in project thumbnails */
 .project-thumbnail {
     position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .project-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
+    transition: transform var(--transition-fast);
+}
+
+.project-thumbnail:hover img {
+    transform: scale(1.05);
 }
 
 .project-tags {
