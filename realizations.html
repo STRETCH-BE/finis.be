@@ -189,12 +189,14 @@
         <div class="projects-masonry">
             <!-- Project 1 -->
             <div class="project-item" data-category="corporate">
-                <img src="images/Boost_Welness_2.jpeg" alt="Van der Valk Beveren">
+                <div class="project-thumbnail">  <!-- ✅ ADD THIS WRAPPER -->
+                    <img src="images/Boost_Welness_2.jpeg" alt="Van der Valk Beveren">
                     <div class="project-tags">
                         <span class="tag">Hospitality</span>
                     </div>
-                </div>
-                <div class="project-details">
+                </div>  <!-- ✅ CLOSE project-thumbnail -->
+                
+                <div class="project-details">  <!-- ✅ INSIDE project-item -->
                     <h3 class="project-title">Van der Valk Beveren</h3>
                     <p class="project-location">📍 Beveren-Waas, Belgium</p>
                     <p class="project-description">Complete transformation off the spa facilities, creating multi-level acoustict stretch ceilings with integrated light and sound</p>
@@ -217,7 +219,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
 
             <!-- Project 2 -->
             <div class="project-item" data-category="education">
