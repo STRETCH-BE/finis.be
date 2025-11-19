@@ -1,1061 +1,1002 @@
-/**
- * Finis Website - Enhanced JavaScript
- * Version: 2.0.0
- * Description: Complete JavaScript with performance, accessibility, and UX improvements
- */
+/* ========================================
+   FINIS WEBSITE - COMPLETE ENHANCED STYLESHEET
+   Acoustic Architecture, Precisely Crafted
+   ======================================== */
 
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
-/**
- * Debounce function to limit function calls
- */
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+/* === RESET & BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/**
- * Throttle function for scroll events
- */
-function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
+/* === CSS VARIABLES === */
+:root {
+    /* Brand Colors */
+    --teal: #006B5D;
+    --warm-white: #FAFAFA;
+    --charcoal: #1F2937;
+    --copper: #B87333;
+    --light-grey: #E5E7EB;
+    --red-accent: #DC2626;
+    
+    /* Gradients */
+    --gradient-teal: linear-gradient(135deg, #006B5D 0%, #008574 100%);
+    --gradient-copper: linear-gradient(135deg, #B87333 0%, #D4924A 100%);
+    
+    /* Spacing */
+    --section-padding: 6rem 2rem;
+    --border-radius: 12px;
+    
+    /* Transitions */
+    --transition-fast: 0.3s ease;
+    --transition-medium: 0.6s ease;
 }
 
-// ============================================
-// SCROLL HANDLER WITH PERFORMANCE OPTIMIZATION
-// ============================================
-
-class ScrollHandler {
-    constructor() {
-        this.navbar = document.getElementById('navbar');
-        this.lastScrollY = 0;
-        this.ticking = false;
-        this.init();
-    }
-    
-    init() {
-        if (!this.navbar) return;
-        
-        // Use requestAnimationFrame for smooth animations
-        window.addEventListener('scroll', () => this.requestTick());
-        
-        // Initialize navbar state
-        this.updateNavbar();
-    }
-    
-    requestTick() {
-        if (!this.ticking) {
-            window.requestAnimationFrame(() => this.updateNavbar());
-            this.ticking = true;
-        }
-    }
-    
-    updateNavbar() {
-        const currentScrollY = window.scrollY;
-        
-        // Add/remove scrolled class
-        if (currentScrollY > 50) {
-            this.navbar.classList.add('scrolled');
-        } else {
-            this.navbar.classList.remove('scrolled');
-        }
-        
-        // Hide/show navbar on scroll (only on desktop)
-        if (window.innerWidth > 768) {
-            if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
-                this.navbar.classList.add('nav-hidden');
-            } else {
-                this.navbar.classList.remove('nav-hidden');
-            }
-        }
-        
-        this.lastScrollY = currentScrollY;
-        this.ticking = false;
-    }
+/* === BODY & TYPOGRAPHY === */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--charcoal);
+    background-color: var(--warm-white);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-// ============================================
-// MOBILE MENU HANDLER
-// ============================================
-
-class MobileMenu {
-    constructor() {
-        this.menuBtn = null;
-        this.navLinks = document.querySelector('.nav-links');
-        this.isOpen = false;
-        this.focusTrap = null;
-        this.init();
-    }
-    
-    init() {
-        if (!this.navLinks) return;
-        
-        this.createMenuButton();
-        this.attachEvents();
-        this.handleResize();
-    }
-    
-    createMenuButton() {
-        // Check if button already exists
-        if (document.querySelector('.mobile-menu-btn')) return;
-        
-        const menuHTML = `
-            <button class="mobile-menu-btn" 
-                    aria-label="Menu" 
-                    aria-expanded="false"
-                    aria-controls="navigation-menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        `;
-        
-        const nav = document.querySelector('.nav-container');
-        nav.insertAdjacentHTML('beforeend', menuHTML);
-        this.menuBtn = document.querySelector('.mobile-menu-btn');
-        
-        // Add ID to nav-links for accessibility
-        this.navLinks.id = 'navigation-menu';
-    }
-    
-    attachEvents() {
-        if (!this.menuBtn) return;
-        
-        // Menu toggle
-        this.menuBtn.addEventListener('click', () => this.toggleMenu());
-        
-        // Close on outside click
-        document.addEventListener('click', (e) => {
-            if (this.isOpen && !e.target.closest('.nav-container')) {
-                this.closeMenu();
-            }
-        });
-        
-        // Close on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.isOpen) {
-                this.closeMenu();
-                this.menuBtn.focus();
-            }
-        });
-        
-        // Close menu when link is clicked
-        this.navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (this.isOpen) {
-                    this.closeMenu();
-                }
-            });
-        });
-    }
-    
-    toggleMenu() {
-        this.isOpen ? this.closeMenu() : this.openMenu();
-    }
-    
-    openMenu() {
-        this.isOpen = true;
-        this.menuBtn.classList.add('active');
-        this.navLinks.classList.add('mobile-open');
-        this.menuBtn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-        
-        // Focus management
-        this.setupFocusTrap();
-    }
-    
-    closeMenu() {
-        this.isOpen = false;
-        this.menuBtn.classList.remove('active');
-        this.navLinks.classList.remove('mobile-open');
-        this.menuBtn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-        
-        // Remove focus trap
-        this.removeFocusTrap();
-    }
-    
-    setupFocusTrap() {
-        const focusableElements = this.navLinks.querySelectorAll(
-            'a, button, [tabindex]:not([tabindex="-1"])'
-        );
-        
-        if (focusableElements.length === 0) return;
-        
-        const firstElement = focusableElements[0];
-        const lastElement = focusableElements[focusableElements.length - 1];
-        
-        this.focusTrap = (e) => {
-            if (e.key === 'Tab') {
-                if (e.shiftKey) {
-                    if (document.activeElement === firstElement) {
-                        e.preventDefault();
-                        lastElement.focus();
-                    }
-                } else {
-                    if (document.activeElement === lastElement) {
-                        e.preventDefault();
-                        firstElement.focus();
-                    }
-                }
-            }
-        };
-        
-        document.addEventListener('keydown', this.focusTrap);
-    }
-    
-    removeFocusTrap() {
-        if (this.focusTrap) {
-            document.removeEventListener('keydown', this.focusTrap);
-            this.focusTrap = null;
-        }
-    }
-    
-    handleResize() {
-        window.addEventListener('resize', debounce(() => {
-            if (window.innerWidth > 768 && this.isOpen) {
-                this.closeMenu();
-            }
-        }, 250));
-    }
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
-// ============================================
-// IMAGE LAZY LOADER
-// ============================================
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
 
-class ImageLazyLoader {
-    constructor() {
-        this.images = document.querySelectorAll('img[data-src], img[loading="lazy"]');
-        this.imageOptions = {
-            threshold: 0.01,
-            rootMargin: '50px'
-        };
-        this.init();
+h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+h4 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #4B5563;
+}
+
+/* === SKIP LINK (ACCESSIBILITY) === */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--teal);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    z-index: 9999;
+    border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* === SCROLL PROGRESS BAR === */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(0, 107, 93, 0.1);
+    z-index: 1100;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: var(--gradient-teal);
+    width: 0;
+    transition: width 0.1s ease;
+}
+
+/* === NAVIGATION === */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(250, 250, 250, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1.5rem 0;
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav.scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+nav.nav-hidden {
+    transform: translateY(-100%);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+    z-index: 1001;
+}
+
+.logo:hover {
+    color: var(--copper);
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--teal);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--teal);
+    transition: width var(--transition-fast);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* === MOBILE MENU BUTTON === */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--charcoal);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* === HERO SECTION === */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+    background-image: url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(250, 250, 250, 0.3);
+    z-index: 0;
+}
+
+.hero-content,
+.hero-stats {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    
-    init() {
-        if ('IntersectionObserver' in window) {
-            this.imageObserver = new IntersectionObserver(
-                (entries) => this.handleImages(entries),
-                this.imageOptions
-            );
-            
-            this.images.forEach(img => {
-                // Skip images that are already loaded
-                if (!img.complete) {
-                    this.imageObserver.observe(img);
-                }
-            });
-        } else {
-            // Fallback for older browsers
-            this.loadAllImages();
-        }
-    }
-    
-    handleImages(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                this.loadImage(entry.target);
-                this.imageObserver.unobserve(entry.target);
-            }
-        });
-    }
-    
-    loadImage(img) {
-        const src = img.getAttribute('data-src');
-        const srcset = img.getAttribute('data-srcset');
-        
-        if (src) {
-            img.src = src;
-            img.removeAttribute('data-src');
-        }
-        
-        if (srcset) {
-            img.srcset = srcset;
-            img.removeAttribute('data-srcset');
-        }
-        
-        // Add loaded class for animations
-        img.addEventListener('load', () => {
-            img.classList.add('loaded');
-        });
-        
-        // Handle error
-        img.addEventListener('error', () => {
-            img.classList.add('error');
-            console.error(`Failed to load image: ${src || img.src}`);
-        });
-    }
-    
-    loadAllImages() {
-        this.images.forEach(img => {
-            if (!img.complete) {
-                this.loadImage(img);
-            }
-        });
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-// ============================================
-// ANIMATION CONTROLLER
-// ============================================
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin: 2rem 0;
+    color: #6B7280;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-class AnimationController {
-    constructor() {
-        this.animatedElements = document.querySelectorAll(
-            '.timeline-item, .feature-card, .project-card, [data-animate]'
-        );
-        this.animationOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        this.init();
+.hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+/* === BUTTONS === */
+.btn-primary, 
+.btn-secondary {
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--gradient-teal);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 107, 93, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 107, 93, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--teal);
+    border: 2px solid var(--teal);
+}
+
+.btn-secondary:hover {
+    background: var(--teal);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 107, 93, 0.2);
+}
+
+/* === HERO STATS === */
+.hero-stats {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform var(--transition-fast);
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--teal);
+    background: var(--gradient-teal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #6B7280;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* === SECTION CONTAINERS === */
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--section-padding);
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #6B7280;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+/* === VALUE PROPOSITION === */
+.value-proposition {
+    background: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.feature-card {
+    padding: 2.5rem;
+    background: var(--warm-white);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-fast);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-teal);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+/* === APPROACH TIMELINE === */
+.approach {
+    background: var(--warm-white);
+}
+
+.timeline {
+    max-width: 900px;
+    margin: 4rem auto 0;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-medium);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-number {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    box-shadow: 0 4px 15px rgba(0, 107, 93, 0.2);
+}
+
+.timeline-content h3 {
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+}
+
+/* === FEATURED PROJECTS === */
+.featured-projects {
+    background: white;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.view-all {
+    color: var(--teal);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-all:hover {
+    transform: translateX(5px);
+    color: var(--copper);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+    height: 250px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    transition: background var(--transition-fast);
+}
+
+.project-card:hover .project-image::before {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.project-overlay {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.project-category {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    display: inline-block;
+}
+
+.project-info {
+    padding: 2rem;
+}
+
+.project-info h3 {
+    color: var(--charcoal);
+    margin-bottom: 0.75rem;
+}
+
+.project-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    list-style: none;
+    font-size: 0.875rem;
+}
+
+.project-stats li {
+    flex: 1;
+}
+
+.project-stats strong {
+    color: var(--teal);
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* === CONTACT SECTION === */
+.contact {
+    background: var(--charcoal);
+    color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-info h2 {
+    color: white;
+}
+
+.contact-info p {
+    color: #D1D5DB;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-item strong {
+    color: var(--copper);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.125rem;
+    transition: color var(--transition-fast);
+}
+
+.contact-item a:hover {
+    color: var(--copper);
+}
+
+.contact-item span {
+    color: white;
+    font-size: 1.125rem;
+}
+
+/* === CONTACT FORM === */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all var(--transition-fast);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--copper);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-form select option {
+    background: var(--charcoal);
+    color: white;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Form validation styles */
+.error-message {
+    display: block;
+    color: #EF4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+input.error,
+textarea.error,
+select.error {
+    border-color: #EF4444 !important;
+}
+
+/* === TOAST NOTIFICATIONS === */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 9999;
+    max-width: 350px;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.toast-success {
+    border-left: 4px solid #10B981;
+}
+
+.toast-error {
+    border-left: 4px solid #EF4444;
+}
+
+.toast-icon {
+    font-size: 1.25rem;
+}
+
+.toast-success .toast-icon {
+    color: #10B981;
+}
+
+.toast-error .toast-icon {
+    color: #EF4444;
+}
+
+/* === FOOTER === */
+footer {
+    background: #111827;
+    color: white;
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section .logo {
+    color: var(--copper);
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    color: #9CA3AF;
+    font-size: 1rem;
+}
+
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+    color: #9CA3AF;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.footer-section a:hover {
+    color: var(--copper);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    text-align: center;
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+/* === UTILITY CLASSES === */
+.text-center {
+    text-align: center;
+}
+
+.text-gradient {
+    background: var(--gradient-teal);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.fade-in {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
     }
     
-    init() {
-        if (this.animatedElements.length === 0) return;
-        
-        // Check for reduced motion preference
-        if (this.prefersReducedMotion()) {
-            this.showAllElements();
-            return;
-        }
-        
-        this.setupObserver();
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(250, 250, 250, 0.98);
+        flex-direction: column;
+        padding: 2rem;
+        transition: left 0.3s ease;
+        z-index: 999;
     }
     
-    prefersReducedMotion() {
-        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    .nav-links.active {
+        left: 0;
     }
     
-    setupObserver() {
-        this.observer = new IntersectionObserver(
-            (entries) => this.handleAnimations(entries),
-            this.animationOptions
-        );
-        
-        this.animatedElements.forEach(element => {
-            // Add initial state
-            element.classList.add('animate-ready');
-            this.observer.observe(element);
-        });
+    .nav-links li {
+        margin: 1rem 0;
     }
     
-    handleAnimations(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Add animation class with delay for staggered effect
-                const delay = entry.target.dataset.animateDelay || 0;
-                setTimeout(() => {
-                    entry.target.classList.add('animate-in');
-                }, delay);
-                
-                // Stop observing once animated
-                this.observer.unobserve(entry.target);
-            }
-        });
+    .nav-links a {
+        display: block;
+        padding: 0.75rem;
+        font-size: 1.125rem;
     }
     
-    showAllElements() {
-        this.animatedElements.forEach(element => {
-            element.classList.add('visible');
-        });
+    .nav-links a::after {
+        display: none;
     }
 }
 
-// ============================================
-// SMOOTH SCROLL HANDLER
-// ============================================
-
-class SmoothScroll {
-    constructor() {
-        this.links = document.querySelectorAll('a[href^="#"]');
-        this.init();
+/* Tablets and smaller laptops */
+@media (max-width: 968px) {
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.9rem;
     }
     
-    init() {
-        if (this.links.length === 0) return;
-        
-        this.links.forEach(link => {
-            link.addEventListener('click', (e) => this.handleClick(e));
-        });
+    .hero {
+        background-attachment: scroll;
     }
     
-    handleClick(e) {
-        const href = e.currentTarget.getAttribute('href');
-        
-        // Skip if just "#"
-        if (href === '#') return;
-        
-        const target = document.querySelector(href);
-        if (!target) return;
-        
-        e.preventDefault();
-        
-        // Get navbar height for offset
-        const navbar = document.getElementById('navbar');
-        const navbarHeight = navbar ? navbar.offsetHeight : 0;
-        const targetPosition = target.offsetTop - navbarHeight - 20;
-        
-        // Smooth scroll with fallback
-        if ('scrollBehavior' in document.documentElement.style) {
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        } else {
-            // Fallback for older browsers
-            window.scrollTo(0, targetPosition);
-        }
-        
-        // Update URL without jumping
-        if (history.pushState) {
-            history.pushState(null, null, href);
-        }
-        
-        // Focus management for accessibility
-        target.setAttribute('tabindex', '-1');
-        target.focus();
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .hero-cta .btn-primary,
+    .hero-cta .btn-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .hero-stats {
+        gap: 2rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
     }
 }
 
-// ============================================
-// ENHANCED CONTACT FORM
-// ============================================
-
-class ContactForm {
-    constructor() {
-        this.form = document.querySelector('.contact-form form');
-        if (!this.form) return;
-        
-        this.submitBtn = this.form.querySelector('button[type="submit"]');
-        this.honeypot = null;
-        this.init();
+/* Mobile devices */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
     }
     
-    init() {
-        this.addHoneypot();
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-        this.addFieldValidation();
-        this.addInputFormatting();
+    h2 {
+        font-size: 2rem;
     }
     
-    addHoneypot() {
-        // Add invisible field to catch bots
-        const honeypot = document.createElement('input');
-        honeypot.type = 'text';
-        honeypot.name = 'website';
-        honeypot.className = 'honeypot';
-        honeypot.tabIndex = -1;
-        honeypot.autocomplete = 'off';
-        honeypot.setAttribute('aria-hidden', 'true');
-        this.form.appendChild(honeypot);
-        this.honeypot = honeypot;
+    .nav-container {
+        padding: 0 1rem;
     }
     
-    addFieldValidation() {
-        const inputs = this.form.querySelectorAll('input, textarea, select');
-        
-        inputs.forEach(input => {
-            // Add ARIA attributes
-            if (input.hasAttribute('required')) {
-                input.setAttribute('aria-required', 'true');
-            }
-            
-            // Real-time validation
-            input.addEventListener('blur', () => this.validateField(input));
-            input.addEventListener('input', () => {
-                this.clearError(input);
-                this.checkFormValidity();
-            });
-        });
+    .logo {
+        font-size: 1.5rem;
     }
     
-    addInputFormatting() {
-        // Format phone number
-        const phoneInput = this.form.querySelector('input[type="tel"]');
-        if (phoneInput) {
-            phoneInput.addEventListener('input', (e) => {
-                let value = e.target.value.replace(/\D/g, '');
-                if (value.length > 0) {
-                    if (value.length <= 3) {
-                        value = value;
-                    } else if (value.length <= 6) {
-                        value = value.slice(0, 3) + ' ' + value.slice(3);
-                    } else {
-                        value = value.slice(0, 3) + ' ' + value.slice(3, 6) + ' ' + value.slice(6, 10);
-                    }
-                }
-                e.target.value = value;
-            });
-        }
+    .hero {
+        padding: 6rem 1rem 3rem;
     }
     
-    validateField(field) {
-        const value = field.value.trim();
-        let isValid = true;
-        let errorMessage = '';
-        
-        // Check if honeypot is filled (bot detection)
-        if (this.honeypot && this.honeypot.value) {
-            return false;
-        }
-        
-        // Required field validation
-        if (field.hasAttribute('required') && !value) {
-            errorMessage = 'This field is required';
-            isValid = false;
-        }
-        
-        // Field-specific validation
-        else if (field.type === 'email' && value) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(value)) {
-                errorMessage = 'Please enter a valid email address';
-                isValid = false;
-            }
-        }
-        
-        else if (field.type === 'tel' && value) {
-            const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-            const digitsOnly = value.replace(/\D/g, '');
-            if (!phoneRegex.test(value) || digitsOnly.length < 10) {
-                errorMessage = 'Please enter a valid phone number';
-                isValid = false;
-            }
-        }
-        
-        else if (field.name === 'name' && value) {
-            if (value.length < 2) {
-                errorMessage = 'Name must be at least 2 characters';
-                isValid = false;
-            }
-        }
-        
-        else if (field.tagName === 'SELECT' && field.hasAttribute('required')) {
-            if (!value || value === '') {
-                errorMessage = 'Please select an option';
-                isValid = false;
-            }
-        }
-        
-        else if (field.tagName === 'TEXTAREA' && value) {
-            if (value.length < 10) {
-                errorMessage = 'Message must be at least 10 characters';
-                isValid = false;
-            }
-        }
-        
-        if (!isValid) {
-            this.showError(field, errorMessage);
-        } else {
-            this.clearError(field);
-        }
-        
-        return isValid;
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
     }
     
-    showError(field, message) {
-        this.clearError(field);
-        
-        field.classList.add('error');
-        field.setAttribute('aria-invalid', 'true');
-        
-        const errorId = `${field.name || field.id}-error`;
-        const errorElement = document.createElement('span');
-        errorElement.className = 'error-message';
-        errorElement.id = errorId;
-        errorElement.textContent = message;
-        errorElement.setAttribute('role', 'alert');
-        errorElement.setAttribute('aria-live', 'polite');
-        
-        field.setAttribute('aria-describedby', errorId);
-        
-        // Insert error message after the field
-        if (field.parentNode.classList.contains('form-row')) {
-            field.parentNode.parentNode.insertBefore(errorElement, field.parentNode.nextSibling);
-        } else {
-            field.parentNode.insertBefore(errorElement, field.nextSibling);
-        }
+    .stat-number {
+        font-size: 2.5rem;
     }
     
-    clearError(field) {
-        field.classList.remove('error');
-        field.removeAttribute('aria-invalid');
-        field.removeAttribute('aria-describedby');
-        
-        const errorElement = field.parentNode.querySelector('.error-message') || 
-                            field.parentNode.parentNode.querySelector('.error-message');
-        if (errorElement) {
-            errorElement.remove();
-        }
+    .section-container {
+        padding: 4rem 1.5rem;
     }
     
-    checkFormValidity() {
-        const inputs = this.form.querySelectorAll('input, textarea, select');
-        let isValid = true;
-        
-        inputs.forEach(input => {
-            if (input.hasAttribute('required') && !input.value.trim()) {
-                isValid = false;
-            }
-        });
-        
-        // Enable/disable submit button based on validity
-        if (this.submitBtn) {
-            this.submitBtn.disabled = !isValid;
-        }
+    .features-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
     
-    async handleSubmit(e) {
-        e.preventDefault();
-        
-        // Validate honeypot
-        if (this.honeypot && this.honeypot.value) {
-            console.warn('Bot detected');
-            return;
-        }
-        
-        // Validate all fields
-        const inputs = this.form.querySelectorAll('input, textarea, select');
-        let isFormValid = true;
-        
-        inputs.forEach(input => {
-            if (!this.validateField(input)) {
-                isFormValid = false;
-            }
-        });
-        
-        if (!isFormValid) {
-            this.showToast('Please correct the errors in the form', 'error');
-            
-            // Focus first error field
-            const firstError = this.form.querySelector('.error');
-            if (firstError) {
-                firstError.focus();
-            }
-            return;
-        }
-        
-        // Show loading state
-        this.setLoadingState(true);
-        
-        try {
-            const formData = new FormData(this.form);
-            const data = Object.fromEntries(formData);
-            
-            // Remove honeypot from data
-            delete data.website;
-            
-            // Simulate API call (replace with actual endpoint)
-            // const response = await fetch('/api/contact', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(data)
-            // });
-            
-            // Simulate delay
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            
-            // Track form submission
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'form_submit', {
-                    event_category: 'engagement',
-                    event_label: 'contact_form'
-                });
-            }
-            
-            this.showToast('Thank you! We\'ll contact you within 24 hours.', 'success');
-            this.form.reset();
-            this.checkFormValidity();
-            
-        } catch (error) {
-            this.showToast('Something went wrong. Please try again or call us directly.', 'error');
-            console.error('Form submission error:', error);
-            
-        } finally {
-            this.setLoadingState(false);
-        }
+    .timeline-item {
+        gap: 1rem;
     }
     
-    setLoadingState(isLoading) {
-        if (!this.submitBtn) return;
-        
-        if (isLoading) {
-            this.submitBtn.disabled = true;
-            this.submitBtn.dataset.originalText = this.submitBtn.textContent;
-            this.submitBtn.innerHTML = '<span class="spinner"></span> Sending...';
-        } else {
-            this.submitBtn.disabled = false;
-            this.submitBtn.textContent = this.submitBtn.dataset.originalText || 'Request Consultation';
-        }
+    .timeline-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
     }
     
-    showToast(message, type = 'info') {
-        // Remove existing toast
-        const existingToast = document.querySelector('.toast');
-        if (existingToast) {
-            existingToast.remove();
-        }
-        
-        const toast = document.createElement('div');
-        toast.className = `toast toast-${type}`;
-        toast.setAttribute('role', 'alert');
-        toast.setAttribute('aria-live', 'polite');
-        
-        const icon = type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ';
-        
-        toast.innerHTML = `
-            <div class="toast-content">
-                <span class="toast-icon" aria-hidden="true">${icon}</span>
-                <span class="toast-message">${message}</span>
-                <button class="toast-close" aria-label="Close notification">&times;</button>
-            </div>
-        `;
-        
-        document.body.appendChild(toast);
-        
-        // Close button functionality
-        const closeBtn = toast.querySelector('.toast-close');
-        closeBtn.addEventListener('click', () => {
-            toast.classList.remove('show');
-            setTimeout(() => toast.remove(), 300);
-        });
-        
-        // Trigger animation
-        requestAnimationFrame(() => {
-            toast.classList.add('show');
-        });
-        
-        // Auto-remove after 5 seconds
-        setTimeout(() => {
-            if (toast.parentNode) {
-                toast.classList.remove('show');
-                setTimeout(() => toast.remove(), 300);
-            }
-        }, 5000);
+    .project-stats {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
 
-// ============================================
-// SCROLL PROGRESS INDICATOR
-// ============================================
-
-class ScrollProgress {
-    constructor() {
-        this.createProgressBar();
-        this.updateProgress = throttle(() => this.calculateProgress(), 10);
-        window.addEventListener('scroll', this.updateProgress);
-        window.addEventListener('resize', this.updateProgress);
+/* Small mobile devices */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
     }
     
-    createProgressBar() {
-        const progressBar = document.createElement('div');
-        progressBar.className = 'scroll-progress';
-        progressBar.setAttribute('role', 'progressbar');
-        progressBar.setAttribute('aria-label', 'Page scroll progress');
-        progressBar.innerHTML = '<div class="scroll-progress-bar"></div>';
-        document.body.appendChild(progressBar);
-        this.bar = progressBar.querySelector('.scroll-progress-bar');
-        this.progressBar = progressBar;
-    }
-    
-    calculateProgress() {
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const scrollTop = window.scrollY;
-        const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
-        
-        this.bar.style.width = `${Math.min(scrollPercentage, 100)}%`;
-        this.progressBar.setAttribute('aria-valuenow', Math.round(scrollPercentage));
-        this.progressBar.setAttribute('aria-valuemin', '0');
-        this.progressBar.setAttribute('aria-valuemax', '100');
+    .hero-cta .btn-primary,
+    .hero-cta .btn-secondary {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
     }
 }
 
-// ============================================
-// PERFORMANCE MONITOR
-// ============================================
-
-class PerformanceMonitor {
-    constructor() {
-        this.metrics = {};
-        this.init();
+/* === PRINT STYLES === */
+@media print {
+    nav,
+    .hero-cta,
+    .contact-form,
+    footer,
+    .scroll-progress {
+        display: none;
     }
     
-    init() {
-        if (!window.performance || !window.PerformanceObserver) return;
-        
-        // Monitor Core Web Vitals
-        this.observeLCP();
-        this.observeFID();
-        this.observeCLS();
-        this.measureLoadTime();
+    .hero {
+        background: white;
+        min-height: auto;
+        padding: 2rem;
     }
     
-    observeLCP() {
-        try {
-            const observer = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                const lastEntry = entries[entries.length - 1];
-                this.metrics.lcp = lastEntry.renderTime || lastEntry.loadTime;
-            });
-            
-            observer.observe({ entryTypes: ['largest-contentful-paint'] });
-        } catch (e) {
-            console.log('LCP observation not supported');
-        }
+    .hero::before {
+        display: none;
     }
-    
-    observeFID() {
-        try {
-            const observer = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                entries.forEach(entry => {
-                    this.metrics.fid = entry.processingStart - entry.startTime;
-                });
-            });
-            
-            observer.observe({ entryTypes: ['first-input'] });
-        } catch (e) {
-            console.log('FID observation not supported');
-        }
-    }
-    
-    observeCLS() {
-        try {
-            let clsValue = 0;
-            
-            const observer = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                entries.forEach(entry => {
-                    if (!entry.hadRecentInput) {
-                        clsValue += entry.value;
-                    }
-                });
-                
-                this.metrics.cls = clsValue;
-            });
-            
-            observer.observe({ entryTypes: ['layout-shift'] });
-        } catch (e) {
-            console.log('CLS observation not supported');
-        }
-    }
-    
-    measureLoadTime() {
-        window.addEventListener('load', () => {
-            if (window.performance && window.performance.timing) {
-                const perfData = performance.timing;
-                const loadTime = perfData.loadEventEnd - perfData.navigationStart;
-                this.metrics.loadTime = loadTime;
-                
-                // Report metrics after page load
-                setTimeout(() => this.reportMetrics(), 1000);
-            }
-        });
-    }
-    
-    reportMetrics() {
-        console.log('Performance Metrics:', this.metrics);
-        
-        // Send to analytics if available
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'web_vitals', {
-                event_category: 'Web Vitals',
-                lcp: Math.round(this.metrics.lcp || 0),
-                fid: Math.round(this.metrics.fid || 0),
-                cls: (this.metrics.cls || 0).toFixed(3),
-                load_time: Math.round(this.metrics.loadTime || 0)
-            });
-        }
-    }
-}
-
-// ============================================
-// MAIN APPLICATION
-// ============================================
-
-class FinisApp {
-    constructor() {
-        this.modules = {};
-        this.init();
-    }
-    
-    init() {
-        // Core modules
-        this.modules.scrollHandler = new ScrollHandler();
-        this.modules.mobileMenu = new MobileMenu();
-        this.modules.smoothScroll = new SmoothScroll();
-        
-        // Enhancement modules
-        this.modules.lazyLoader = new ImageLazyLoader();
-        this.modules.animations = new AnimationController();
-        this.modules.contactForm = new ContactForm();
-        this.modules.scrollProgress = new ScrollProgress();
-        
-        // Performance monitoring
-        this.modules.performance = new PerformanceMonitor();
-        
-        // Initialize analytics
-        this.initAnalytics();
-        
-        // Setup global error handling
-        this.setupErrorHandling();
-        
-        // Register service worker
-        this.registerServiceWorker();
-    }
-    
-    initAnalytics() {
-        // Initialize data layer
-        window.dataLayer = window.dataLayer || [];
-        
-        // Track page view
-        this.trackPageView();
-        
-        // Setup event tracking
-        this.setupEventTracking();
-    }
-    
-    trackPageView() {
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'page_view', {
-                page_title: document.title,
-                page_location: window.location.href,
-                page_path: window.location.pathname
-            });
-        }
-    }
-    
-    setupEventTracking() {
-        // Track CTA clicks
-        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const action = e.target.textContent.trim();
-                const label = e.target.href || 'button-click';
-                
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'cta_click', {
-                        event_category: 'engagement',
-                        event_label: label,
-                        value: action
-                    });
-                }
-            });
-        });
-        
-        // Track outbound links
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        event_category: 'outbound',
-                        event_label: e.target.href
-                    });
-                }
-            });
-        });
-        
-        // Track phone number clicks
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', () => {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        event_category: 'contact',
-                        event_label: 'phone_number'
-                    });
-                }
-            });
-        });
-        
-        // Track email clicks
-        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-            link.addEventListener('click', () => {
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'click', {
-                        event_category: 'contact',
-                        event_label: 'email'
-                    });
-                }
-            });
-        });
-    }
-    
-    setupErrorHandling() {
-        // Global error handler
-        window.addEventListener('error', (e) => {
-            console.error('Application error:', e.error);
-            
-            // Send to error tracking
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'exception', {
-                    description: e.message,
-                    fatal: false
-                });
-            }
-        });
-        
-        // Promise rejection handler
-        window.addEventListener('unhandledrejection', (e) => {
-            console.error('Unhandled promise rejection:', e.reason);
-            
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'exception', {
-                    description: 'Unhandled promise rejection',
-                    fatal: false
-                });
-            }
-        });
-    }
-    
-    registerServiceWorker() {
-        if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('ServiceWorker registered:', registration.scope);
-                    })
-                    .catch(error => {
-                        console.log('ServiceWorker registration failed:', error);
-                    });
-            });
-        }
-    }
-}
-
-// ============================================
-// INITIALIZATION
-// ============================================
-
-// Initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        window.finisApp = new FinisApp();
-    });
-} else {
-    // DOM already loaded
-    window.finisApp = new FinisApp();
-}
-
-// Export for debugging
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { FinisApp };
 }
