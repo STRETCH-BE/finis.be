@@ -557,6 +557,14 @@ nav.nav-hidden {
     gap: 2rem;
     margin-bottom: 3rem;
     position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-medium);
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Connecting line between timeline items */
@@ -894,18 +902,24 @@ select.error {
 }
 
 /* === TOAST NOTIFICATIONS === */
-.toast {
+#toast-container {
     position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast {
     background: white;
     padding: 1rem 1.5rem;
     border-radius: 8px;
     box-shadow: var(--shadow-lg);
     transform: translateX(400px);
     transition: transform var(--transition-medium);
-    z-index: 9999;
     max-width: 350px;
+    margin-bottom: 1rem;
+    pointer-events: auto;
 }
 
 .toast.show {
@@ -918,6 +932,11 @@ select.error {
     gap: 0.75rem;
 }
 
+.toast-message {
+    flex: 1;
+    color: var(--charcoal);
+}
+
 .toast-close {
     margin-left: auto;
     background: none;
@@ -927,6 +946,8 @@ select.error {
     color: var(--charcoal);
     opacity: 0.5;
     transition: opacity var(--transition-fast);
+    padding: 0;
+    line-height: 1;
 }
 
 .toast-close:hover {
@@ -955,6 +976,10 @@ select.error {
 
 .toast-error .toast-icon {
     color: var(--red-accent);
+}
+
+.toast-info .toast-icon {
+    color: var(--teal);
 }
 
 /* === LOADING STATES === */
