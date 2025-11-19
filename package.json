@@ -1,0 +1,23 @@
+{
+  "name": "finis-acoustic-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Finis - Acoustic Architecture, Precisely Crafted",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "echo 'Static site - no server required'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/STRETCH-BE/finis.be.git"
+  },
+  "keywords": [
+    "acoustic",
+    "architecture",
+    "stretch-ceilings",
+    "acoustic-panels",
+    "interior-design"
+  ],
+  "author": "Finis",
+  "license": "UNLICENSED"
+}
