@@ -3,335 +3,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stretch Ceilings | Finis - Acoustic Architecture</title>
-    <meta name="description" content="Premium stretch ceiling solutions combining aesthetics with acoustic performance.">
+    
+    <!-- SEO Meta Tags -->
+    <title>Stretch Ceilings Solutions | Premium Acoustic Architecture | Finis</title>
+    <meta name="description" content="Discover Finis stretch ceiling systems. Premium textile ceilings, acoustic solutions, and custom printed designs. Transform your space with precision-engineered ceiling architecture.">
+    <meta name="keywords" content="stretch ceilings, acoustic ceilings, printed ceilings, premium ceilings, textile ceilings, STRETCH ceilings, acoustic architecture">
+    <meta name="author" content="Finis - StretchGroup">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://finis.be/solutions/stretch-ceilings">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Stretch Ceiling Solutions - Finis">
+    <meta property="og:description" content="Premium stretch ceiling systems for modern spaces. Acoustic performance meets architectural beauty.">
+    <meta property="og:image" content="https://finis.be/images/solutions/stretch-ceilings-og.jpg">
+    <meta property="og:url" content="https://finis.be/solutions/stretch-ceilings">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Main Styles - Using YOUR existing CSS -->
-    <link rel="stylesheet" href="style__1_.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../style.css">
     
-    <!-- MINIMAL Solution-Specific Extensions (only what's NOT in your CSS) -->
-    <style>
-        /* Teal overlay for solution pages - uncommented from your CSS */
-        .hero.solution-page::before {
-            background: rgba(0, 107, 93, 0.85);
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Stretch Ceiling Systems",
+        "description": "Premium stretch ceiling solutions including acoustic and printed variants",
+        "brand": {
+            "@type": "Organization",
+            "name": "Finis"
+        },
+        "manufacturer": {
+            "@type": "Organization",
+            "name": "STRETCH - StretchGroup"
         }
-        .hero.solution-page h1,
-        .hero.solution-page .hero-subtitle {
-            color: white;
-        }
-        
-        /* Breadcrumb - only new element not in your CSS */
-        .breadcrumb {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 1.5rem;
-        }
-        .breadcrumb a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-        .breadcrumb a:hover {
-            color: var(--copper);
-        }
-        .breadcrumb span {
-            color: rgba(255, 255, 255, 0.5);
-        }
-    </style>
+    }
+    </script>
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://finis.be"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://finis.be/solutions"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Stretch Ceilings",
+            "item": "https://finis.be/solutions/stretch-ceilings"
+        }]
+    }
+    </script>
 </head>
 <body>
-    <!-- Navigation - EXACT structure from your CSS -->
-    <nav id="navbar">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <div class="logo">FINIS</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="logo">
+                <a href="../index.html" aria-label="Finis - Home">FINIS</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" 
+                    aria-label="Toggle navigation menu" 
+                    aria-expanded="false"
+                    aria-controls="navigation-menu">
+                <span class="hamburger-line" aria-hidden="true"></span>
+                <span class="hamburger-line" aria-hidden="true"></span>
+                <span class="hamburger-line" aria-hidden="true"></span>
+            </button>
+            
+            <ul class="nav-links" id="navigation-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../realizations.html">Realizations</a></li>
+                <li><a href="../index.html#approach">Our Approach</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section - Using YOUR .hero class with solution-page modifier -->
-    <section class="hero solution-page" style="background-image: url('images/stretch-ceiling-hero.jpg');">
-        <div class="hero-content">
-            <p class="breadcrumb">
-                <a href="index.html">Home</a> <span>/</span>
-                <a href="solutions.html">Solutions</a> <span>/</span>
-                <span>Stretch Ceilings</span>
-            </p>
-            <h1>Stretch Ceilings</h1>
-            <p class="hero-subtitle">Transform any space with our innovative stretch ceiling systems. Combining aesthetic excellence with superior acoustic performance.</p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero solution-hero" style="min-height: 60vh; background: linear-gradient(135deg, #006B5D 0%, #008574 100%);">
+            <div class="hero-content">
+                <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
+                    <ol style="display: flex; gap: 0.5rem; list-style: none; font-size: 0.875rem; color: rgba(255,255,255,0.8);">
+                        <li><a href="../index.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Home</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><a href="../solutions.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Solutions</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page" style="color: white;">Stretch Ceilings</li>
+                    </ol>
+                </nav>
+                
+                <h1 style="color: white;">Stretch Ceiling Systems</h1>
+                <p class="hero-subtitle" style="color: rgba(255,255,255,0.9); max-width: 700px;">
+                    Precision-engineered textile and PVC ceiling membranes that transform spaces through seamless aesthetics and superior acoustic performance.
+                </p>
+            </div>
+        </section>
 
-    <!-- Overview - Using YOUR .value-proposition and .section-container -->
-    <section class="value-proposition">
-        <div class="section-container">
-            <div class="section-intro">
-                <h2>The Future of Ceiling Design</h2>
-                <p class="section-subtitle">Revolutionary membrane technology for seamless, high-performance ceilings</p>
-            </div>
-            
-            <!-- Using YOUR .features-grid -->
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Rapid Installation</h3>
-                    <p>Minimal disruption with most installations completing in just days, not weeks.</p>
+        <!-- System Overview -->
+        <section class="value-proposition" aria-label="System overview">
+            <div class="section-container">
+                <div class="section-intro">
+                    <h2>The STRETCH System</h2>
+                    <p>Backed by our parent company STRETCH, we deliver ceiling solutions that combine manufacturing excellence with precision installation. Each system is engineered for longevity, performance, and visual impact.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">♻️</div>
-                    <h3>Sustainable</h3>
-                    <p>100% recyclable materials with minimal environmental impact throughout lifecycle.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Design Freedom</h3>
-                    <p>Over 200 colors, finishes, and custom printing capabilities for unlimited possibilities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Benefits - Using YOUR .approach section -->
-    <section class="approach">
-        <div class="section-container">
-            <div class="section-intro">
-                <h2>Why Choose Stretch Ceilings?</h2>
-                <p class="section-subtitle">Engineered for performance, designed for impact</p>
-            </div>
-            
-            <!-- Using YOUR .features-grid again -->
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔇</div>
-                    <h3>Superior Acoustics</h3>
-                    <p>Reduce reverberation time by up to 70% for comfortable, productive environments.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Lighting Integration</h3>
-                    <p>Seamless integration with LED systems and backlit panels for dramatic effects.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Moisture Resistant</h3>
-                    <p>100% waterproof membranes protect against leaks and condensation.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔥</div>
-                    <h3>Fire Safety</h3>
-                    <p>Certified to European standards (B-s2, d0) for commercial peace of mind.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
-                    <h3>Time Efficient</h3>
-                    <p>Clean, dust-free installation with no extended operational downtime.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Easy Maintenance</h3>
-                    <p>Simple cleaning with access to plenum space when needed.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- Technical Overview Grid -->
+                <div class="features-grid" style="margin-top: 3rem;">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="12" width="32" height="24" stroke="currentColor" stroke-width="2" rx="2"/>
+                                <path d="M8 20h32M16 12v24M32 12v24" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Seamless Installation</h3>
+                        <p>Proprietary track-and-membrane system creates perfectly smooth surfaces up to 50m² without visible seams. Installation completed in days, not weeks.</p>
+                    </div>
 
-    <!-- Product Types - Using YOUR .featured-projects structure -->
-    <section class="featured-projects">
-        <div class="section-container">
-            <div class="section-intro">
-                <h2>Our Stretch Ceiling Collection</h2>
-                <p class="section-subtitle">Three specialized solutions for specific performance requirements</p>
-            </div>
-            
-            <!-- Using YOUR .projects-grid -->
-            <div class="projects-grid">
-                <!-- Premium Stretch Ceilings -->
-                <div class="project-card" onclick="window.location.href='stretch-ceilings-premium.html'">
-                    <div class="project-image" style="background-image: url('images/premium-stretch-ceiling.jpg');">
-                        <div class="project-overlay">
-                            <span class="project-category">Luxury Finishes</span>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 14v20M14 24h20" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Technical Integration</h3>
+                        <p>Accommodates lighting, HVAC, sprinklers, and AV systems. Modular access panels allow maintenance without compromising aesthetics.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 20L24 8L36 20M12 28L24 40L36 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Performance Standards</h3>
+                        <p>Fire-rated materials (B-s2, d0). Antimicrobial treatments available. 10-year warranty on materials and installation quality.</p>
+                    </div>
+                </div>
+
+                <!-- Key Specifications -->
+                <div style="margin-top: 4rem; padding: 2.5rem; background: var(--warm-white); border-radius: 12px; border-left: 4px solid var(--teal);">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--teal);">System Specifications</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div>
+                            <strong style="display: block; margin-bottom: 0.5rem; color: var(--charcoal);">Maximum Span</strong>
+                            <span style="color: #6B7280;">Up to 50m² per membrane without seams</span>
+                        </div>
+                        <div>
+                            <strong style="display: block; margin-bottom: 0.5rem; color: var(--charcoal);">Acoustic Performance</strong>
+                            <span style="color: #6B7280;">NRC 0.45-0.95 depending on configuration</span>
+                        </div>
+                        <div>
+                            <strong style="display: block; margin-bottom: 0.5rem; color: var(--charcoal);">Installation Time</strong>
+                            <span style="color: #6B7280;">500m² completed in 5-7 working days</span>
+                        </div>
+                        <div>
+                            <strong style="display: block; margin-bottom: 0.5rem; color: var(--charcoal);">Fire Classification</strong>
+                            <span style="color: #6B7280;">B-s2, d0 (EN 13501-1)</span>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Premium Stretch Ceilings</h3>
-                        <p>Luxury collection with matte, satin, and high-gloss finishes. Over 200 colors for stunning visual impact.</p>
-                        <ul class="project-stats">
-                            <li><strong>200+</strong> Colors</li>
-                            <li><strong>3</strong> Finishes</li>
-                            <li><strong>15yr</strong> Warranty</li>
-                        </ul>
-                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Product Variants -->
+        <section class="featured-projects" style="background: white;" aria-label="Stretch ceiling variants">
+            <div class="section-container">
+                <h2 class="text-center">Choose Your System</h2>
+                <p class="section-subtitle">Three specialized configurations designed for distinct performance requirements and aesthetic preferences.</p>
                 
-                <!-- Acoustic Stretch Ceilings -->
-                <div class="project-card" onclick="window.location.href='stretch-ceilings-acoustic.html'">
-                    <div class="project-image" style="background-image: url('images/acoustic-stretch-ceiling.jpg');">
-                        <div class="project-overlay">
-                            <span class="project-category">Performance</span>
+                <div class="projects-grid" style="margin-top: 3rem;">
+                    <!-- Premium Stretch Ceilings -->
+                    <article class="project-card solution-card" onclick="window.location.href='stretch-ceilings-premium.html'">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(0,107,93,0.9) 0%, rgba(0,133,116,0.9) 100%), url('images/solutions/premium-stretch.jpg'); background-size: cover; background-position: center;" role="img" aria-label="Premium stretch ceiling in luxury office">
+                            <div class="project-overlay">
+                                <span class="project-category">Flagship System</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Premium Stretch Ceilings</h3>
+                            <p>Ultra-smooth textile membranes in matte, satin, and lacquer finishes. Perfect reflectivity control for high-end interiors where visual precision matters.</p>
+                            
+                            <ul class="project-stats" style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                <li>
+                                    <strong>200+</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Color Options</span>
+                                </li>
+                                <li>
+                                    <strong>0.18mm</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Membrane Thickness</span>
+                                </li>
+                                <li>
+                                    <strong>50m²</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Max Seamless Area</span>
+                                </li>
+                                <li>
+                                    <strong>10yr</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Warranty Period</span>
+                                </li>
+                            </ul>
+                            
+                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--light-grey);">
+                                <strong style="color: var(--teal); font-size: 0.875rem; display: block; margin-bottom: 0.5rem;">IDEAL FOR</strong>
+                                <span style="font-size: 0.875rem; color: #6B7280;">Corporate offices, retail flagships, hospitality lobbies, residential luxury</span>
+                            </div>
+                            
+                            <a href="stretch-ceilings-premium.html" class="btn-secondary" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block; padding: 0.875rem;">
+                                Explore Premium System →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Acoustic Stretch Ceilings -->
+                    <article class="project-card solution-card" onclick="window.location.href='stretch-ceilings-acoustic.html'">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(184,115,51,0.9) 0%, rgba(212,146,74,0.9) 100%), url('images/solutions/acoustic-stretch.jpg'); background-size: cover; background-position: center;" role="img" aria-label="Acoustic stretch ceiling in conference room">
+                            <div class="project-overlay">
+                                <span class="project-category" style="background: rgba(184,115,51,0.15); color: var(--copper); border: 1px solid rgba(184,115,51,0.3);">Performance System</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Acoustic Stretch Ceilings</h3>
+                            <p>Micro-perforated membranes engineered for maximum sound absorption. Combines STRETCH aesthetics with professional acoustic performance metrics.</p>
+                            
+                            <ul class="project-stats" style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                <li>
+                                    <strong>NRC 0.85</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Sound Absorption</span>
+                                </li>
+                                <li>
+                                    <strong>250k</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Micro-perforations/m²</span>
+                                </li>
+                                <li>
+                                    <strong>0.8s</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Target RT60</span>
+                                </li>
+                                <li>
+                                    <strong>40%</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Noise Reduction</span>
+                                </li>
+                            </ul>
+                            
+                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--light-grey);">
+                                <strong style="color: var(--copper); font-size: 0.875rem; display: block; margin-bottom: 0.5rem;">IDEAL FOR</strong>
+                                <span style="font-size: 0.875rem; color: #6B7280;">Open offices, conference rooms, educational facilities, call centers</span>
+                            </div>
+                            
+                            <a href="stretch-ceilings-acoustic.html" class="btn-secondary" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block; padding: 0.875rem; border-color: var(--copper); color: var(--copper);">
+                                Explore Acoustic System →
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Printed Stretch Ceilings -->
+                    <article class="project-card solution-card" onclick="window.location.href='stretch-ceilings-printed.html'">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(31,41,55,0.9) 0%, rgba(55,65,81,0.9) 100%), url('images/solutions/printed-stretch.jpg'); background-size: cover; background-position: center;" role="img" aria-label="Printed stretch ceiling with custom graphics">
+                            <div class="project-overlay">
+                                <span class="project-category" style="background: rgba(31,41,55,0.15); color: var(--charcoal); border: 1px solid rgba(31,41,55,0.3);">Custom System</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Printed Stretch Ceilings</h3>
+                            <p>High-resolution UV printing on premium membranes. Transform ceilings into brand experiences, wayfinding systems, or artistic statements.</p>
+                            
+                            <ul class="project-stats" style="margin-top: 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                <li>
+                                    <strong>1440dpi</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Print Resolution</span>
+                                </li>
+                                <li>
+                                    <strong>Unlimited</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Design Options</span>
+                                </li>
+                                <li>
+                                    <strong>5+ yrs</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Print Durability</span>
+                                </li>
+                                <li>
+                                    <strong>Custom</strong>
+                                    <span style="font-size: 0.875rem; color: #6B7280;">Any Dimensions</span>
+                                </li>
+                            </ul>
+                            
+                            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--light-grey);">
+                                <strong style="color: var(--charcoal); font-size: 0.875rem; display: block; margin-bottom: 0.5rem;">IDEAL FOR</strong>
+                                <span style="font-size: 0.875rem; color: #6B7280;">Retail environments, branded spaces, museums, entertainment venues</span>
+                            </div>
+                            
+                            <a href="stretch-ceilings-printed.html" class="btn-secondary" style="margin-top: 1.5rem; width: 100%; text-align: center; display: block; padding: 0.875rem; border-color: var(--charcoal); color: var(--charcoal);">
+                                Explore Printed System →
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Process -->
+        <section class="approach" aria-label="Installation process">
+            <div class="section-container">
+                <h2 class="text-center">Professional Installation Process</h2>
+                <p class="section-subtitle">Our certified teams deliver flawless results through systematic methodology and quality control at every stage.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">01</div>
+                        <div class="timeline-content">
+                            <h3>Site Assessment & Measurement</h3>
+                            <p>Laser-precise measurements and structural evaluation. We identify integration points for lighting, HVAC, and other building systems before fabrication begins.</p>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Acoustic Stretch Ceilings</h3>
-                        <p>Microperforated acoustic membranes deliver exceptional noise reduction without compromising aesthetics.</p>
-                        <ul class="project-stats">
-                            <li><strong>70%</strong> Noise Cut</li>
-                            <li><strong>0.85</strong> NRC</li>
-                            <li><strong>0.2mm</strong> Holes</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Printed Stretch Ceilings -->
-                <div class="project-card" onclick="window.location.href='stretch-ceilings-printed.html'">
-                    <div class="project-image" style="background-image: url('images/printed-stretch-ceiling.jpg');">
-                        <div class="project-overlay">
-                            <span class="project-category">Custom Design</span>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">02</div>
+                        <div class="timeline-content">
+                            <h3>Custom Fabrication</h3>
+                            <p>Membranes manufactured to exact specifications in our STRETCH facility. Each piece is individually tagged and quality-inspected before delivery.</p>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>Printed Stretch Ceilings</h3>
-                        <p>High-resolution digital printing transforms ceilings into custom canvases for branding or artistic expression.</p>
-                        <ul class="project-stats">
-                            <li><strong>HD</strong> Quality</li>
-                            <li><strong>UV</strong> Resistant</li>
-                            <li><strong>∞</strong> Designs</li>
-                        </ul>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">03</div>
+                        <div class="timeline-content">
+                            <h3>Track Installation</h3>
+                            <p>Perimeter tracks installed with millimeter accuracy using laser levels. Track system engineered to hold up to 15kg/linear meter tension load.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">04</div>
+                        <div class="timeline-content">
+                            <h3>Membrane Tensioning</h3>
+                            <p>Controlled heating and precision tensioning creates perfectly smooth surface. Process completed in hours with minimal disruption to operations.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-number">05</div>
+                        <div class="timeline-content">
+                            <h3>Quality Verification</h3>
+                            <p>Final inspection ensures perfect tension, seam integrity, and system integration. Documentation package includes as-built drawings and maintenance guidelines.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Section -->
-    <section class="approach">
-        <div class="section-container" style="text-align: center;">
-            <h2>Ready to Transform Your Space?</h2>
-            <p style="font-size: 1.25rem; color: #6B7280; max-width: 700px; margin: 0 auto 2.5rem;">Let's discuss how stretch ceilings can elevate your next project. Our team provides comprehensive support from concept to completion.</p>
-            <div class="hero-cta">
-                <a href="#contact-form" class="btn-primary">Request Consultation</a>
-                <a href="projects.html" class="btn-secondary">View Project Gallery</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form - Using YOUR .contact structure -->
-    <section class="contact section-container" id="contact-form">
-        <div class="contact-content">
-            <div class="contact-info">
-                <h2>Get in Touch</h2>
-                <p>Ready to discuss your acoustic architecture project? Our team is here to help you create spaces that sound as good as they look.</p>
+        <!-- Comparison Table -->
+        <section class="value-proposition" style="background: white;" aria-label="System comparison">
+            <div class="section-container">
+                <h2 class="text-center">System Comparison</h2>
+                <p class="section-subtitle">Select the configuration that aligns with your project requirements and performance objectives.</p>
                 
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <strong>Email</strong>
-                        <a href="mailto:info@finis.be">info@finis.be</a>
-                    </div>
+                <div style="overflow-x: auto; margin-top: 3rem;">
+                    <table style="width: 100%; min-width: 800px; border-collapse: collapse; background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: var(--teal); color: white;">
+                                <th style="padding: 1.25rem; text-align: left; font-weight: 500;">Feature</th>
+                                <th style="padding: 1.25rem; text-align: center; font-weight: 500;">Premium</th>
+                                <th style="padding: 1.25rem; text-align: center; font-weight: 500;">Acoustic</th>
+                                <th style="padding: 1.25rem; text-align: center; font-weight: 500;">Printed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Visual Finish</td>
+                                <td style="padding: 1rem; text-align: center;">Matte / Satin / Lacquer</td>
+                                <td style="padding: 1rem; text-align: center;">Matte Perforated</td>
+                                <td style="padding: 1rem; text-align: center;">Custom Graphics</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-grey); background: rgba(0,107,93,0.02);">
+                                <td style="padding: 1rem; font-weight: 500;">Acoustic Performance</td>
+                                <td style="padding: 1rem; text-align: center;">NRC 0.45</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">NRC 0.85</td>
+                                <td style="padding: 1rem; text-align: center;">NRC 0.50</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Color Options</td>
+                                <td style="padding: 1rem; text-align: center;">200+ RAL Colors</td>
+                                <td style="padding: 1rem; text-align: center;">20+ Standard Colors</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">Unlimited (Custom)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-grey); background: rgba(0,107,93,0.02);">
+                                <td style="padding: 1rem; font-weight: 500;">Light Reflectance</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">Up to 90%</td>
+                                <td style="padding: 1rem; text-align: center;">75%</td>
+                                <td style="padding: 1rem; text-align: center;">Variable</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Installation Speed</td>
+                                <td style="padding: 1rem; text-align: center;">100m²/day</td>
+                                <td style="padding: 1rem; text-align: center;">80m²/day</td>
+                                <td style="padding: 1rem; text-align: center;">75m²/day</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-grey); background: rgba(0,107,93,0.02);">
+                                <td style="padding: 1rem; font-weight: 500;">Fire Rating</td>
+                                <td style="padding: 1rem; text-align: center;">B-s2, d0</td>
+                                <td style="padding: 1rem; text-align: center;">B-s2, d0</td>
+                                <td style="padding: 1rem; text-align: center;">B-s2, d0</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Maintenance</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">Minimal</td>
+                                <td style="padding: 1rem; text-align: center;">Low</td>
+                                <td style="padding: 1rem; text-align: center;">Low</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; font-weight: 500;">Lead Time</td>
+                                <td style="padding: 1rem; text-align: center;">2-3 weeks</td>
+                                <td style="padding: 1rem; text-align: center;">3-4 weeks</td>
+                                <td style="padding: 1rem; text-align: center;">4-5 weeks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p style="color: #6B7280; margin-bottom: 1.5rem;">Need help selecting the right system for your project?</p>
+                    <a href="../index.html#contact" class="btn-primary">Consult Our Specialists</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Solutions CTA -->
+        <section class="contact" style="padding: 4rem 2rem;" aria-label="Related solutions">
+            <div class="section-container">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2 style="color: white; margin-bottom: 1rem;">Explore Complete Acoustic Solutions</h2>
+                    <p style="color: #D1D5DB; margin-bottom: 2rem;">
+                        Stretch ceilings are one component of comprehensive acoustic architecture. Discover our full range of solutions for complete space transformation.
+                    </p>
                     
-                    <div class="contact-item">
-                        <strong>Phone</strong>
-                        <a href="tel:+32123456789">+32 (0)12 345 67 89</a>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <strong>Address</strong>
-                        <span>Industrieweg 123<br>2300 Turnhout, Belgium</span>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                        <a href="../solutions.html" class="btn-secondary" style="background: white; color: var(--teal); border-color: white;">
+                            View All Solutions
+                        </a>
+                        <a href="../realizations.html" class="btn-secondary" style="border-color: white; color: white;">
+                            See Project Gallery
+                        </a>
                     </div>
                 </div>
             </div>
-            
-            <div class="contact-form">
-                <form>
-                    <div class="form-row">
-                        <input type="text" placeholder="First Name *" required>
-                        <input type="text" placeholder="Last Name *" required>
-                    </div>
-                    
-                    <input type="email" placeholder="Email Address *" required>
-                    <input type="tel" placeholder="Phone Number">
-                    
-                    <select required>
-                        <option value="">Select Solution *</option>
-                        <option value="stretch-premium">Premium Stretch Ceilings</option>
-                        <option value="stretch-acoustic">Acoustic Stretch Ceilings</option>
-                        <option value="stretch-printed">Printed Stretch Ceilings</option>
-                        <option value="grid">Grid Ceilings</option>
-                        <option value="metal">Metal Ceilings</option>
-                        <option value="felt">Felt Ceilings</option>
-                        <option value="acoustic-panels">Acoustic Panels</option>
-                        <option value="climate">Climate Ceilings</option>
-                    </select>
-                    
-                    <textarea placeholder="Tell us about your project *" required></textarea>
-                    
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer - Using YOUR EXACT footer structure -->
-    <footer>
+    <!-- Footer -->
+    <footer role="contentinfo">
         <div class="footer-content">
             <div class="footer-section">
                 <div class="logo">FINIS</div>
                 <p>Acoustic Architecture, Precisely Crafted</p>
+                <p>Part of the StretchGroup Portfolio</p>
             </div>
-            
             <div class="footer-section">
-                <h4>Solutions</h4>
+                <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="stretch-ceilings.html">Stretch Ceilings</a></li>
-                    <li><a href="grid-ceilings.html">Grid Ceilings</a></li>
-                    <li><a href="metal-ceilings.html">Metal Ceilings</a></li>
-                    <li><a href="felt-ceilings.html">Felt Ceilings</a></li>
-                    <li><a href="acoustic-panels.html">Acoustic Panels</a></li>
-                    <li><a href="climate-ceilings.html">Climate Ceilings</a></li>
+                    <li><a href="../solutions.html">Solutions</a></li>
+                    <li><a href="../realizations.html">Realizations</a></li>
+                    <li><a href="../index.html#approach">Our Approach</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
                 </ul>
             </div>
-            
             <div class="footer-section">
-                <h4>Company</h4>
+                <h4>Stretch Ceiling Systems</h4>
                 <ul>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="#contact-form">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="stretch-ceilings-premium.html">Premium Ceilings</a></li>
+                    <li><a href="stretch-ceilings-acoustic.html">Acoustic Ceilings</a></li>
+                    <li><a href="stretch-ceilings-printed.html">Printed Ceilings</a></li>
+                    <li><a href="../solutions.html">All Solutions</a></li>
                 </ul>
             </div>
-            
             <div class="footer-section">
-                <h4>Resources</h4>
+                <h4>Part of StretchGroup</h4>
+                <p>Backed by manufacturing excellence from:</p>
                 <ul>
-                    <li><a href="technical-specs.html">Technical Specifications</a></li>
-                    <li><a href="downloads.html">Downloads</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="https://stretchplafond.be" target="_blank" rel="noopener noreferrer">STRETCH - Textile Ceilings</a></li>
+                    <li><a href="https://altodesign.pl" target="_blank" rel="noopener noreferrer">Alto Design - PVC Solutions</a></li>
                 </ul>
             </div>
         </div>
-        
         <div class="footer-bottom">
-            <p>&copy; 2024 Finis - Part of StretchGroup. All rights reserved.</p>
+            <p>&copy; <span class="current-year">2025</span> Finis - StretchGroup. All rights reserved.</p>
+            <p>
+                <a href="/privacy">Privacy Policy</a> | 
+                <a href="/terms">Terms of Service</a> | 
+                <a href="/sitemap.xml">Sitemap</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Scripts - YOUR existing script.js -->
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="../script.js" defer></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </body>
 </html>
