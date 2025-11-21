@@ -4,159 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stretch Ceilings | Finis - Acoustic Architecture</title>
-    <meta name="description" content="Premium stretch ceiling solutions combining aesthetics with acoustic performance. Discover our range of acoustic, premium, and printed stretch ceiling systems.">
+    <meta name="description" content="Premium stretch ceiling solutions combining aesthetics with acoustic performance.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Main Styles -->
+    <!-- Main Styles - Using YOUR existing CSS -->
     <link rel="stylesheet" href="style__1_.css">
     
-    <!-- Solution-Specific Styles (Minimal Extensions) -->
+    <!-- MINIMAL Solution-Specific Extensions (only what's NOT in your CSS) -->
     <style>
-        /* Breadcrumb Navigation */
-        .breadcrumb {
-            display: flex;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.8);
+        /* Teal overlay for solution pages - uncommented from your CSS */
+        .hero.solution-page::before {
+            background: rgba(0, 107, 93, 0.85);
+        }
+        .hero.solution-page h1,
+        .hero.solution-page .hero-subtitle {
+            color: white;
         }
         
+        /* Breadcrumb - only new element not in your CSS */
+        .breadcrumb {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
         .breadcrumb a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
-        
         .breadcrumb a:hover {
             color: var(--copper);
         }
-        
         .breadcrumb span {
             color: rgba(255, 255, 255, 0.5);
-        }
-        
-        /* Shorter Hero for Solution Pages */
-        .hero.solution-hero {
-            min-height: 60vh;
-        }
-        
-        /* Teal Overlay for Solution Pages */
-        .hero.solution-hero::before {
-            background: linear-gradient(135deg, rgba(0, 107, 93, 0.85) 0%, rgba(0, 107, 93, 0.65) 100%);
-        }
-        
-        .hero.solution-hero h1,
-        .hero.solution-hero .hero-subtitle {
-            color: white;
-        }
-        
-        /* Two-Column Overview Layout */
-        .overview-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 2rem;
-        }
-        
-        .overview-image {
-            height: 500px;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .overview-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Feature List with Icons */
-        .feature-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-        
-        .feature-list-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .feature-list-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-teal);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.25rem;
-            flex-shrink: 0;
-        }
-        
-        .feature-list-item div {
-            flex: 1;
-        }
-        
-        .feature-list-item strong {
-            display: block;
-            color: var(--charcoal);
-            margin-bottom: 0.25rem;
-        }
-        
-        .feature-list-item p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #6B7280;
-        }
-        
-        /* CTA Section with Dark Background */
-        .cta-section {
-            background: var(--charcoal);
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            color: white;
-        }
-        
-        .cta-section p {
-            color: #D1D5DB;
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 968px) {
-            .overview-layout {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .overview-image {
-                height: 400px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero.solution-hero {
-                padding: 6rem 1.5rem 3rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation (Using Existing Styles) -->
+    <!-- Navigation - EXACT structure from your CSS -->
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">FINIS</div>
@@ -170,213 +58,180 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Using Existing .hero with .solution-hero Modifier) -->
-    <section class="hero solution-hero" style="background-image: url('images/stretch-ceiling-hero.jpg');">
+    <!-- Hero Section - Using YOUR .hero class with solution-page modifier -->
+    <section class="hero solution-page" style="background-image: url('images/stretch-ceiling-hero.jpg');">
         <div class="hero-content">
-            <nav class="breadcrumb">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <a href="solutions.html">Solutions</a>
-                <span>/</span>
+            <p class="breadcrumb">
+                <a href="index.html">Home</a> <span>/</span>
+                <a href="solutions.html">Solutions</a> <span>/</span>
                 <span>Stretch Ceilings</span>
-            </nav>
+            </p>
             <h1>Stretch Ceilings</h1>
-            <p class="hero-subtitle">Transform any space with our innovative stretch ceiling systems. Combining aesthetic excellence with superior acoustic performance, our solutions deliver seamless integration and limitless design possibilities.</p>
+            <p class="hero-subtitle">Transform any space with our innovative stretch ceiling systems. Combining aesthetic excellence with superior acoustic performance.</p>
         </div>
     </section>
 
-    <!-- Overview Section (Using Existing .section-container) -->
-    <section class="section-container value-proposition">
-        <h2 style="color: var(--teal);">The Future of Ceiling Design</h2>
-        
-        <div class="overview-layout">
-            <div>
-                <p>Stretch ceilings represent a revolutionary approach to interior finishing, offering unparalleled versatility in design, acoustics, and installation. Our advanced membrane technology creates perfectly smooth, seamless surfaces that transform ordinary ceilings into architectural statements.</p>
+    <!-- Overview - Using YOUR .value-proposition and .section-container -->
+    <section class="value-proposition">
+        <div class="section-container">
+            <div class="section-intro">
+                <h2>The Future of Ceiling Design</h2>
+                <p class="section-subtitle">Revolutionary membrane technology for seamless, high-performance ceilings</p>
+            </div>
+            
+            <!-- Using YOUR .features-grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rapid Installation</h3>
+                    <p>Minimal disruption with most installations completing in just days, not weeks.</p>
+                </div>
                 
-                <p>From corporate offices to luxury retail spaces, our stretch ceiling systems deliver exceptional performance while maintaining aesthetic integrity. The lightweight PVC or fabric membranes are engineered for durability, fire safety, and ease of maintenance.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">♻️</div>
+                    <h3>Sustainable</h3>
+                    <p>100% recyclable materials with minimal environmental impact throughout lifecycle.</p>
+                </div>
                 
-                <div class="feature-list">
-                    <div class="feature-list-item">
-                        <div class="feature-list-icon">⚡</div>
-                        <div>
-                            <strong>Rapid Installation</strong>
-                            <p>Minimal disruption, maximum impact. Most installations complete in days.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Design Freedom</h3>
+                    <p>Over 200 colors, finishes, and custom printing capabilities for unlimited possibilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits - Using YOUR .approach section -->
+    <section class="approach">
+        <div class="section-container">
+            <div class="section-intro">
+                <h2>Why Choose Stretch Ceilings?</h2>
+                <p class="section-subtitle">Engineered for performance, designed for impact</p>
+            </div>
+            
+            <!-- Using YOUR .features-grid again -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔇</div>
+                    <h3>Superior Acoustics</h3>
+                    <p>Reduce reverberation time by up to 70% for comfortable, productive environments.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Lighting Integration</h3>
+                    <p>Seamless integration with LED systems and backlit panels for dramatic effects.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Moisture Resistant</h3>
+                    <p>100% waterproof membranes protect against leaks and condensation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <h3>Fire Safety</h3>
+                    <p>Certified to European standards (B-s2, d0) for commercial peace of mind.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Time Efficient</h3>
+                    <p>Clean, dust-free installation with no extended operational downtime.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Easy Maintenance</h3>
+                    <p>Simple cleaning with access to plenum space when needed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Types - Using YOUR .featured-projects structure -->
+    <section class="featured-projects">
+        <div class="section-container">
+            <div class="section-intro">
+                <h2>Our Stretch Ceiling Collection</h2>
+                <p class="section-subtitle">Three specialized solutions for specific performance requirements</p>
+            </div>
+            
+            <!-- Using YOUR .projects-grid -->
+            <div class="projects-grid">
+                <!-- Premium Stretch Ceilings -->
+                <div class="project-card" onclick="window.location.href='stretch-ceilings-premium.html'">
+                    <div class="project-image" style="background-image: url('images/premium-stretch-ceiling.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Luxury Finishes</span>
                         </div>
                     </div>
-                    
-                    <div class="feature-list-item">
-                        <div class="feature-list-icon">♻️</div>
-                        <div>
-                            <strong>Sustainable Solution</strong>
-                            <p>100% recyclable materials with minimal environmental impact.</p>
+                    <div class="project-info">
+                        <h3>Premium Stretch Ceilings</h3>
+                        <p>Luxury collection with matte, satin, and high-gloss finishes. Over 200 colors for stunning visual impact.</p>
+                        <ul class="project-stats">
+                            <li><strong>200+</strong> Colors</li>
+                            <li><strong>3</strong> Finishes</li>
+                            <li><strong>15yr</strong> Warranty</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Acoustic Stretch Ceilings -->
+                <div class="project-card" onclick="window.location.href='stretch-ceilings-acoustic.html'">
+                    <div class="project-image" style="background-image: url('images/acoustic-stretch-ceiling.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Performance</span>
                         </div>
                     </div>
-                    
-                    <div class="feature-list-item">
-                        <div class="feature-list-icon">🎨</div>
-                        <div>
-                            <strong>Unlimited Design Options</strong>
-                            <p>Over 200 colors, finishes, and custom printing capabilities.</p>
+                    <div class="project-info">
+                        <h3>Acoustic Stretch Ceilings</h3>
+                        <p>Microperforated acoustic membranes deliver exceptional noise reduction without compromising aesthetics.</p>
+                        <ul class="project-stats">
+                            <li><strong>70%</strong> Noise Cut</li>
+                            <li><strong>0.85</strong> NRC</li>
+                            <li><strong>0.2mm</strong> Holes</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Printed Stretch Ceilings -->
+                <div class="project-card" onclick="window.location.href='stretch-ceilings-printed.html'">
+                    <div class="project-image" style="background-image: url('images/printed-stretch-ceiling.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Custom Design</span>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="overview-image">
-                <img src="images/stretch-ceiling-overview.jpg" alt="Stretch ceiling installation showcase">
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section (Using Existing .features-grid) -->
-    <section class="section-container approach">
-        <div class="section-intro">
-            <h2>Why Choose Stretch Ceilings?</h2>
-            <p class="section-subtitle">Engineered for performance, designed for impact</p>
-        </div>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔇</div>
-                <h3>Superior Acoustics</h3>
-                <p>Integrated acoustic solutions reduce reverberation time by up to 70%, creating comfortable, productive environments.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">💡</div>
-                <h3>Lighting Integration</h3>
-                <p>Seamless integration with LED systems, backlit panels, and custom lighting designs for dramatic visual effects.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>Moisture Resistant</h3>
-                <p>Perfect for high-humidity environments. Waterproof membranes protect against leaks and condensation.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔥</div>
-                <h3>Fire Safety</h3>
-                <p>Certified to European fire safety standards (B-s2, d0), providing peace of mind for commercial applications.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">⏱️</div>
-                <h3>Time Efficient</h3>
-                <p>Clean, dust-free installation process. No plaster, no paint, no extended downtime for your operations.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔧</div>
-                <h3>Easy Maintenance</h3>
-                <p>Simple cleaning, excellent durability. Access to plenum space without compromising ceiling integrity.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Types (Using Existing .projects-grid Structure) -->
-    <section class="section-container featured-projects">
-        <div class="section-intro">
-            <h2>Discover Our Stretch Ceiling Collection</h2>
-            <p class="section-subtitle">Three specialized solutions, each engineered for specific performance requirements</p>
-        </div>
-        
-        <div class="projects-grid">
-            <!-- Premium Stretch Ceilings -->
-            <div class="project-card" onclick="window.location.href='stretch-ceilings-premium.html'">
-                <div class="project-image" style="background-image: url('images/premium-stretch-ceiling.jpg');">
-                    <div class="project-overlay">
-                        <span class="project-category">Luxury Finishes</span>
+                    <div class="project-info">
+                        <h3>Printed Stretch Ceilings</h3>
+                        <p>High-resolution digital printing transforms ceilings into custom canvases for branding or artistic expression.</p>
+                        <ul class="project-stats">
+                            <li><strong>HD</strong> Quality</li>
+                            <li><strong>UV</strong> Resistant</li>
+                            <li><strong>∞</strong> Designs</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="project-info">
-                    <h3>Premium Stretch Ceilings</h3>
-                    <p>Elevate your space with our luxury stretch ceiling collection. Available in matte, satin, and high-gloss finishes with over 200 color options for stunning visual impact.</p>
-                    <ul class="project-stats">
-                        <li>
-                            <strong>200+</strong>
-                            Colors
-                        </li>
-                        <li>
-                            <strong>3</strong>
-                            Finishes
-                        </li>
-                        <li>
-                            <strong>15yr</strong>
-                            Warranty
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Acoustic Stretch Ceilings -->
-            <div class="project-card" onclick="window.location.href='stretch-ceilings-acoustic.html'">
-                <div class="project-image" style="background-image: url('images/acoustic-stretch-ceiling.jpg');">
-                    <div class="project-overlay">
-                        <span class="project-category">Performance</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Acoustic Stretch Ceilings</h3>
-                    <p>Engineered for optimal sound control. Our microperforated acoustic membranes deliver exceptional noise reduction without compromising aesthetic appeal.</p>
-                    <ul class="project-stats">
-                        <li>
-                            <strong>70%</strong>
-                            Noise Reduction
-                        </li>
-                        <li>
-                            <strong>0.85</strong>
-                            NRC Rating
-                        </li>
-                        <li>
-                            <strong>0.2mm</strong>
-                            Perforation
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Printed Stretch Ceilings -->
-            <div class="project-card" onclick="window.location.href='stretch-ceilings-printed.html'">
-                <div class="project-image" style="background-image: url('images/printed-stretch-ceiling.jpg');">
-                    <div class="project-overlay">
-                        <span class="project-category">Custom Design</span>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <h3>Printed Stretch Ceilings</h3>
-                    <p>Transform your ceiling into a canvas. High-resolution digital printing creates breathtaking visual statements from corporate branding to artistic expressions.</p>
-                    <ul class="project-stats">
-                        <li>
-                            <strong>HD</strong>
-                            Printing
-                        </li>
-                        <li>
-                            <strong>UV</strong>
-                            Resistant
-                        </li>
-                        <li>
-                            <strong>∞</strong>
-                            Designs
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section (Using Existing .section-container with Dark Background) -->
-    <section class="section-container cta-section">
-        <h2>Ready to Transform Your Space?</h2>
-        <p>Let's discuss how stretch ceilings can elevate your next project. Our team provides comprehensive support from concept to completion.</p>
-        <div class="hero-cta">
-            <a href="#contact" class="btn-primary">Request Consultation</a>
-            <a href="projects.html" class="btn-secondary" style="border-color: white; color: white;">View Project Gallery</a>
+    <!-- CTA Section - Using YOUR .contact structure with different content -->
+    <section class="contact section-container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Let's discuss how stretch ceilings can elevate your next project. Our team provides comprehensive support from concept to completion.</p>
+            <div class="hero-cta">
+                <a href="#contact-form" class="btn-primary">Request Consultation</a>
+                <a href="projects.html" class="btn-secondary">View Project Gallery</a>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section (Using Existing .contact Styles) -->
-    <section class="contact section-container" id="contact">
+    <!-- Contact Form - Using YOUR .contact structure -->
+    <section class="contact section-container" id="contact-form">
         <div class="contact-content">
             <div class="contact-info">
                 <h2>Get in Touch</h2>
@@ -430,7 +285,7 @@
         </div>
     </section>
 
-    <!-- Footer (Using Existing Footer Styles) -->
+    <!-- Footer - Using YOUR EXACT footer structure -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -455,7 +310,7 @@
                 <ul>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact-form">Contact</a></li>
                     <li><a href="careers.html">Careers</a></li>
                 </ul>
             </div>
@@ -476,7 +331,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Scripts - YOUR existing script.js -->
     <script src="script.js"></script>
 </body>
 </html>
