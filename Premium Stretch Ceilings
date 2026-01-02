@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Premium Stretch Ceilings | Luxury Textile Ceiling Systems | Finis</title>
+    <meta name="description" content="Premium stretch ceiling systems with matte, satin, and lacquer finishes. 200+ colors, seamless installation, 10-year warranty. Transform luxury spaces with STRETCH excellence.">
+    <meta name="keywords" content="premium stretch ceilings, luxury ceilings, textile ceilings, STRETCH premium, matte ceilings, satin ceilings, lacquer ceilings">
+    <link rel="canonical" href="https://finis.be/solutions/stretch-ceilings-premium">
+    
+    <!-- Favicon & Fonts -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">FINIS</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links" id="navigation-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../solutions.html">Solutions</a></li>
+                <li><a href="../realizations.html">Realizations</a></li>
+                <li><a href="../index.html#approach">Our Approach</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="min-height: 70vh; background: linear-gradient(135deg, rgba(0,107,93,0.95) 0%, rgba(0,133,116,0.95) 100%), url('../images/solutions/premium-hero.jpg'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <nav aria-label="Breadcrumb" style="margin-bottom: 2rem;">
+                    <ol style="display: flex; gap: 0.5rem; list-style: none; font-size: 0.875rem; color: rgba(255,255,255,0.8); flex-wrap: wrap;">
+                        <li><a href="../index.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Home</a></li>
+                        <li>/</li>
+                        <li><a href="../solutions.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Solutions</a></li>
+                        <li>/</li>
+                        <li><a href="stretch-ceilings.html" style="color: rgba(255,255,255,0.8); text-decoration: none;">Stretch Ceilings</a></li>
+                        <li>/</li>
+                        <li style="color: white;">Premium</li>
+                    </ol>
+                </nav>
+                
+                <div style="display: inline-block; padding: 0.5rem 1.5rem; background: rgba(255,255,255,0.15); border-radius: 30px; margin-bottom: 1.5rem; border: 1px solid rgba(255,255,255,0.3);">
+                    <span style="color: white; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em;">FLAGSHIP SYSTEM</span>
+                </div>
+                
+                <h1 style="color: white; margin-bottom: 1.5rem;">Premium Stretch Ceilings</h1>
+                <p class="hero-subtitle" style="color: rgba(255,255,255,0.95); max-width: 700px; font-size: 1.375rem;">
+                    Ultra-smooth textile membranes engineered for luxury interiors. Where visual perfection meets architectural precision.
+                </p>
+                
+                <div class="hero-cta" style="margin-top: 2.5rem;">
+                    <a href="#specifications" class="btn-primary" style="background: white; color: var(--teal);">View Specifications</a>
+                    <a href="../index.html#contact" class="btn-secondary" style="border-color: white; color: white;">Request Quote</a>
+                </div>
+            </div>
+            
+            <div class="hero-stats" style="margin-top: 4rem;">
+                <div class="stat">
+                    <span class="stat-number" style="color: white;">200+</span>
+                    <span class="stat-label" style="color: rgba(255,255,255,0.8);">Color Options</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" style="color: white;">50m²</span>
+                    <span class="stat-label" style="color: rgba(255,255,255,0.8);">Seamless Coverage</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" style="color: white;">10yr</span>
+                    <span class="stat-label" style="color: rgba(255,255,255,0.8);">Warranty</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Benefits -->
+        <section class="value-proposition">
+            <div class="section-container">
+                <h2 class="text-center">Why Premium Stretch Ceilings</h2>
+                <p class="section-subtitle">The gold standard in ceiling architecture. Uncompromising quality for projects where every detail matters.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 24l6 6 10-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Flawless Aesthetics</h3>
+                        <p>Mirror-smooth surfaces with perfect tension control. No visible seams, creases, or imperfections across entire ceiling planes up to 50m².</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4L4 14L24 24L44 14L24 4Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M4 24L24 34L44 24M4 34L24 44L44 34" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Three Finish Options</h3>
+                        <p>Matte for soft elegance, satin for subtle sheen, or lacquer for dramatic reflectivity. Each finish calibrated for optimal light performance.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <rect x="8" y="8" width="32" height="32" stroke="currentColor" stroke-width="2" rx="2"/>
+                                <path d="M8 20h32M20 8v32" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Rapid Installation</h3>
+                        <p>100m² installed per day with minimal disruption. No dust, no scaffolding, no lengthy curing times. Operational spaces remain functional.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 12v12l8 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Long-Term Durability</h3>
+                        <p>Anti-static, dust-repellent membranes maintain appearance for decades. 10-year comprehensive warranty covers materials and workmanship.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4v40M4 24h40" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>System Integration</h3>
+                        <p>Seamless accommodation of recessed lighting, HVAC grilles, sprinklers, and AV equipment. Maintains visual continuity across technical insertions.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M12 12h24v24H12z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 4v8M24 36v8M4 24h8M36 24h8" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Sustainable Choice</h3>
+                        <p>100% recyclable materials. No VOC emissions. Reduces energy costs through improved insulation. LEED-compatible solution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Finish Options -->
+        <section class="featured-projects" style="background: var(--warm-white);">
+            <div class="section-container">
+                <h2 class="text-center">Three Distinctive Finishes</h2>
+                <p class="section-subtitle">Each finish engineered for specific lighting conditions and design objectives. All maintain the same structural performance.</p>
+                
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(to bottom, rgba(250,250,250,0.3), rgba(250,250,250,0.8)), linear-gradient(135deg, #E5E7EB 0%, #F3F4F6 100%); height: 200px;">
+                            <div class="project-overlay">
+                                <span class="project-category">Matte Finish</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Matte Premium</h3>
+                            <p>Non-reflective surface for soft, diffused lighting environments. Ideal for residential luxury, high-end hospitality, and art galleries where glare control is paramount.</p>
+                            <ul class="project-stats" style="margin-top: 1rem;">
+                                <li><strong>5%</strong> Light reflectance</li>
+                                <li><strong>Zero</strong> Glare spots</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.7)), linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%); height: 200px;">
+                            <div class="project-overlay">
+                                <span class="project-category">Satin Finish</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Satin Premium</h3>
+                            <p>Subtle pearl-like sheen that adds depth without harsh reflections. Perfect for corporate offices, retail flagships, and contemporary residential projects.</p>
+                            <ul class="project-stats" style="margin-top: 1rem;">
+                                <li><strong>40%</strong> Light reflectance</li>
+                                <li><strong>Soft</strong> Ambient glow</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(to bottom, rgba(255,255,255,0.6), rgba(255,255,255,0.9)), radial-gradient(circle, #FFFFFF 0%, #F0F9FF 100%); height: 200px;">
+                            <div class="project-overlay">
+                                <span class="project-category">Lacquer Finish</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Lacquer Premium</h3>
+                            <p>High-gloss mirror-like surface for dramatic visual impact. Amplifies lighting effects in entertainment venues, luxury retail, and statement residential spaces.</p>
+                            <ul class="project-stats" style="margin-top: 1rem;">
+                                <li><strong>90%</strong> Light reflectance</li>
+                                <li><strong>High</strong> Visual drama</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications -->
+        <section class="value-proposition" id="specifications">
+            <div class="section-container">
+                <h2 class="text-center">Technical Specifications</h2>
+                <p class="section-subtitle">Comprehensive performance data for specification writers and project engineers.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <!-- Material Properties -->
+                    <div style="padding: 2rem; background: white; border-radius: 12px; border: 1px solid var(--light-grey);">
+                        <h4 style="color: var(--teal); margin-bottom: 1.5rem; font-size: 1.125rem;">Material Properties</h4>
+                        <dl style="display: grid; gap: 1rem;">
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Composition</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">Polyester textile with PVC coating</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Thickness</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">0.18mm ±0.02mm</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Weight</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">180g/m²</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Width Options</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">1.5m, 2.0m, 2.5m, 3.2m, 5.0m rolls</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Performance Standards -->
+                    <div style="padding: 2rem; background: white; border-radius: 12px; border: 1px solid var(--light-grey);">
+                        <h4 style="color: var(--teal); margin-bottom: 1.5rem; font-size: 1.125rem;">Performance Standards</h4>
+                        <dl style="display: grid; gap: 1rem;">
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Fire Classification</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">B-s2, d0 (EN 13501-1)</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Acoustic Absorption</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">NRC 0.45 (with plenum)</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Light Reflectance</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">5-90% (finish dependent)</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Tensile Strength</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">120N/5cm (MD/CD)</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Environmental -->
+                    <div style="padding: 2rem; background: white; border-radius: 12px; border: 1px solid var(--light-grey);">
+                        <h4 style="color: var(--teal); margin-bottom: 1.5rem; font-size: 1.125rem;">Environmental</h4>
+                        <dl style="display: grid; gap: 1rem;">
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">VOC Emissions</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">A+ rating (AgBB compliant)</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Recyclability</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">100% recyclable material</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Temperature Range</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">0°C to 40°C operational</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Humidity Resistance</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">Up to 95% RH</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Installation -->
+                    <div style="padding: 2rem; background: white; border-radius: 12px; border: 1px solid var(--light-grey);">
+                        <h4 style="color: var(--teal); margin-bottom: 1.5rem; font-size: 1.125rem;">Installation Details</h4>
+                        <dl style="display: grid; gap: 1rem;">
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Maximum Seamless Area</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">50m² per membrane</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Installation Speed</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">100m² per crew per day</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Minimum Height Loss</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">25mm from existing ceiling</dd>
+                            </div>
+                            <div>
+                                <dt style="font-weight: 500; color: var(--charcoal); margin-bottom: 0.25rem;">Lead Time</dt>
+                                <dd style="color: #6B7280; margin-left: 0;">2-3 weeks from order</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- Download Resources -->
+                <div style="margin-top: 3rem; padding: 2rem; background: var(--teal); border-radius: 12px; color: white; text-align: center;">
+                    <h3 style="color: white; margin-bottom: 1rem;">Technical Documentation</h3>
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Download comprehensive specification sheets, installation guides, and CAD details for architectural specifications.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="#" class="btn-secondary" style="background: white; color: var(--teal); border: none;">
+                            📄 Specification Sheet (PDF)
+                        </a>
+                        <a href="#" class="btn-secondary" style="border-color: white; color: white;">
+                            📐 CAD Details (DWG)
+                        </a>
+                        <a href="#" class="btn-secondary" style="border-color: white; color: white;">
+                            🎨 Color Chart (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Examples -->
+        <section class="featured-projects">
+            <div class="section-container">
+                <h2 class="text-center">Application Examples</h2>
+                <p class="section-subtitle">Premium stretch ceilings excel in environments where visual perfection is non-negotiable.</p>
+                
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(0,107,93,0.8), rgba(0,133,116,0.8)), url('../images/applications/corporate-office.jpg'); background-size: cover;">
+                            <div class="project-overlay">
+                                <span class="project-category">Corporate Offices</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Executive Spaces</h3>
+                            <p>C-suite offices, boardrooms, and reception areas benefit from flawless ceiling planes that convey professionalism and attention to detail.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(184,115,51,0.8), rgba(212,146,74,0.8)), url('../images/applications/retail-luxury.jpg'); background-size: cover;">
+                            <div class="project-overlay">
+                                <span class="project-category">Luxury Retail</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Flagship Stores</h3>
+                            <p>High-end boutiques and showrooms leverage lacquer finishes to create dramatic lighting effects that enhance product presentation.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, rgba(31,41,55,0.8), rgba(55,65,81,0.8)), url('../images/applications/residential.jpg'); background-size: cover;">
+                            <div class="project-overlay">
+                                <span class="project-category">Residential Luxury</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Private Residences</h3>
+                            <p>Master suites, entertainment rooms, and spa bathrooms achieve architectural continuity through seamless ceiling integration.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison with Other Systems -->
+        <section class="approach">
+            <div class="section-container">
+                <h2 class="text-center">Why Choose Premium Over Alternatives</h2>
+                <p class="section-subtitle">Understanding the performance advantages of premium stretch systems versus traditional ceiling methods.</p>
+                
+                <div style="overflow-x: auto; margin-top: 3rem;">
+                    <table style="width: 100%; min-width: 800px; border-collapse: collapse; background: white; box-shadow: 0 2px 20px rgba(0,0,0,0.06); border-radius: 12px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: var(--teal); color: white;">
+                                <th style="padding: 1rem; text-align: left;">Criterion</th>
+                                <th style="padding: 1rem; text-align: center;">Premium Stretch</th>
+                                <th style="padding: 1rem; text-align: center;">Drywall</th>
+                                <th style="padding: 1rem; text-align: center;">Suspended Grid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Visual Continuity</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">Seamless</td>
+                                <td style="padding: 1rem; text-align: center;">Visible seams/joints</td>
+                                <td style="padding: 1rem; text-align: center;">Grid lines visible</td>
+                            </tr>
+                            <tr style="background: rgba(0,107,93,0.02); border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Installation Time (500m²)</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">5-7 days</td>
+                                <td style="padding: 1rem; text-align: center;">3-4 weeks</td>
+                                <td style="padding: 1rem; text-align: center;">2-3 weeks</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Dust/Debris Generation</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">None</td>
+                                <td style="padding: 1rem; text-align: center;">Significant</td>
+                                <td style="padding: 1rem; text-align: center;">Minimal</td>
+                            </tr>
+                            <tr style="background: rgba(0,107,93,0.02); border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Maintenance Requirements</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">Very Low</td>
+                                <td style="padding: 1rem; text-align: center;">Periodic painting</td>
+                                <td style="padding: 1rem; text-align: center;">Tile replacement</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--light-grey);">
+                                <td style="padding: 1rem; font-weight: 500;">Water Damage Recovery</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">Holds water, drainable</td>
+                                <td style="padding: 1rem; text-align: center;">Requires replacement</td>
+                                <td style="padding: 1rem; text-align: center;">Tile staining</td>
+                            </tr>
+                            <tr style="background: rgba(0,107,93,0.02);">
+                                <td style="padding: 1rem; font-weight: 500;">Design Flexibility</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--teal); font-weight: 600;">200+ colors, 3 finishes</td>
+                                <td style="padding: 1rem; text-align: center;">Unlimited (paint)</td>
+                                <td style="padding: 1rem; text-align: center;">Limited tile options</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="contact" style="padding: 5rem 2rem;">
+            <div class="section-container">
+                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <h2 style="color: white; margin-bottom: 1.5rem;">Specify Premium Stretch for Your Project</h2>
+                    <p style="color: #D1D5DB; font-size: 1.125rem; margin-bottom: 3rem;">
+                        Our specification team provides technical support, sample boards, and performance calculations for architects and designers. Start your consultation today.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="../index.html#contact" class="btn-primary" style="background: white; color: var(--teal);">
+                            Request Specification Support
+                        </a>
+                        <a href="#specifications" class="btn-secondary" style="border-color: white; color: white;">
+                            Review Technical Data
+                        </a>
+                        <a href="stretch-ceilings.html" class="btn-secondary" style="border-color: white; color: white;">
+                            Compare All Systems
+                        </a>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Also available:</p>
+                        <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; font-size: 0.875rem;">
+                            <a href="stretch-ceilings-acoustic.html" style="color: var(--copper); text-decoration: none; font-weight: 500;">
+                                Acoustic Stretch Ceilings →
+                            </a>
+                            <a href="stretch-ceilings-printed.html" style="color: var(--copper); text-decoration: none; font-weight: 500;">
+                                Printed Stretch Ceilings →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">FINIS</div>
+                <p>Acoustic Architecture, Precisely Crafted</p>
+                <p>Part of the StretchGroup Portfolio</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../solutions.html">Solutions</a></li>
+                    <li><a href="../realizations.html">Realizations</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Stretch Ceiling Systems</h4>
+                <ul>
+                    <li><a href="stretch-ceilings-premium.html">Premium Ceilings</a></li>
+                    <li><a href="stretch-ceilings-acoustic.html">Acoustic Ceilings</a></li>
+                    <li><a href="stretch-ceilings-printed.html">Printed Ceilings</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Part of StretchGroup</h4>
+                <ul>
+                    <li><a href="https://stretchplafond.be" target="_blank" rel="noopener">STRETCH - Textile Ceilings</a></li>
+                    <li><a href="https://altodesign.pl" target="_blank" rel="noopener">Alto Design - PVC Solutions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="current-year">2025</span> Finis - StretchGroup. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+</body>
+</html>
